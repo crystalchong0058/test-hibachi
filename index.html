@@ -61,7 +61,6 @@
             transform: scale(1.04);
         }
 
-        /* Banner remains dark and premium */
         header {
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
             padding: 100px 20px 80px 20px;
@@ -76,7 +75,7 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-top: 20px; /* Space for the floating logo on smaller monitors */
+            margin-top: 20px;
         }
 
         .header-tagline {
@@ -114,7 +113,6 @@
             margin-bottom: 40px;
         }
 
-        /* Cards Style */
         .card {
             background-color: var(--card-bg);
             padding: 30px;
@@ -135,11 +133,8 @@
             gap: 10px;
         }
 
-        .card-title i {
-            color: var(--gold);
-        }
+        .card-title i { color: var(--gold); }
 
-        /* Menu Styling */
         .menu-section-title {
             color: var(--gold);
             font-size: 1.1rem;
@@ -148,10 +143,12 @@
             letter-spacing: 1px;
             font-weight: 700;
         }
+
         .menu-list {
             list-style: none;
             margin-bottom: 15px;
         }
+
         .menu-list li {
             display: flex;
             justify-content: space-between;
@@ -159,32 +156,33 @@
             border-bottom: 1px dashed var(--border-color);
             font-size: 0.95rem;
         }
+
         .price-badge {
             color: var(--gold);
             font-weight: 600;
         }
 
-        /* Contacts & Info Box */
         .info-item {
             margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
             gap: 12px;
         }
+
         .info-item i {
             color: var(--gold);
             font-size: 1.2rem;
             margin-top: 4px;
         }
+
         .contact-link {
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
-        .contact-link:hover {
-            color: var(--gold);
-        }
+
+        .contact-link:hover { color: var(--gold); }
 
         .btn-review {
             display: inline-block;
@@ -199,14 +197,11 @@
             transition: background 0.3s;
             width: 100%;
         }
-        .btn-review:hover {
-            background-color: #357ae8;
-        }
 
-        /* Form Input Styling */
-        .form-group {
-            margin-bottom: 20px;
-        }
+        .btn-review:hover { background-color: #357ae8; }
+
+        /* Form Controls */
+        .form-group { margin-bottom: 20px; }
         label {
             display: block;
             margin-bottom: 8px;
@@ -214,6 +209,7 @@
             font-size: 0.9rem;
             color: var(--text-dark);
         }
+
         input, select, textarea {
             width: 100%;
             padding: 12px;
@@ -224,16 +220,48 @@
             font-size: 1rem;
             transition: border-color 0.3s, background-color 0.3s;
         }
+
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--gold);
             background-color: #ffffff;
         }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
+
+        /* Order Form Grid Items Styling */
+        .food-order-container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 15px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .food-order-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .food-order-qty {
+            width: 75px !important;
+            padding: 6px 8px !important;
+            text-align: center;
+        }
+
+        .form-section-divider {
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
         .btn-submit {
             background-color: var(--dark-banner);
             color: var(--gold);
@@ -249,20 +277,19 @@
             margin-top: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
+
         .btn-submit:hover {
             background-color: #252525;
             transform: translateY(-2px);
         }
+
         .note-text {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-top: 5px;
         }
 
-        /* Provision lists */
-        .provide-list {
-            list-style: none;
-        }
+        .provide-list { list-style: none; }
         .provide-list li {
             margin-bottom: 10px;
             display: flex;
@@ -273,7 +300,6 @@
         .provide-list.we i { color: #2ecc71; }
         .provide-list.you i { color: #e74c3c; }
 
-        /* Bottom Floating Book Button for Mobile Devices */
         .floating-book-btn {
             position: fixed;
             bottom: 20px;
@@ -301,7 +327,7 @@
             border-top: 1px solid #222;
         }
 
-        /* Hidden PDF Container used by html2pdf */
+        /* Printable PDF Styling layout */
         #pdf-template {
             display: none;
             background: white;
@@ -309,39 +335,25 @@
             padding: 40px;
             font-family: Arial, sans-serif;
         }
-        #pdf-template h1 { color: #111; border-bottom: 2px solid #c39b50; padding-bottom: 10px; }
-        #pdf-template table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        #pdf-template th, #pdf-template td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        #pdf-template h1 { color: #111; border-bottom: 2px solid #c39b50; padding-bottom: 10px; font-size: 22px; }
+        #pdf-template table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 20px; }
+        #pdf-template th, #pdf-template td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; font-size: 13px; }
         #pdf-template th { background-color: #f5f5f5; }
+        .pdf-section-header { font-size: 14px; font-weight: bold; color: #c39b50; margin-top: 15px; margin-bottom: 5px; text-transform: uppercase; }
 
-        /* Responsive Breakpoints */
         @media (max-width: 768px) {
-            .floating-logo {
-                width: 90px;
-                top: 10px;
-                left: 10px;
-                border-radius: 8px;
-            }
-            .floating-logo-link {
-                top: 10px;
-                left: 10px;
-            }
-            header {
-                padding: 120px 15px 60px 15px;
-            }
+            .floating-logo { width: 90px; top: 10px; left: 10px; border-radius: 8px; }
+            .floating-logo-link { top: 10px; left: 10px; }
+            header { padding: 120px 15px 60px 15px; }
             .header-title { font-size: 2.0rem; margin-top: 0; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
-            .floating-book-btn { display: flex; }
-        }
-        @media (min-width: 769px) {
-            .floating-book-btn { display: none; }
         }
     </style>
 </head>
 <body>
 
     <a href="#" class="floating-logo-link">
-        <img src="https://imgur.com/a/4ykJt2o#9UNwncv" alt="Mr Yami Logo" class="floating-logo">
+        <img src="https://i.imgur.com/8Yv6Vsh.png" alt="Mr Yami Logo" class="floating-logo">
     </a>
 
     <header>
@@ -355,7 +367,6 @@
     <div class="container">
         
         <div class="grid-2">
-            
             <div class="card">
                 <h2 class="card-title"><i class="fa-solid fa-tags"></i> Packages & Pricing</h2>
                 <div class="menu-list">
@@ -413,12 +424,10 @@
                     <i class="fa-solid fa-star"></i> Leave Us a Google Review
                 </a>
             </div>
-
         </div>
 
         <div class="card" style="margin-bottom: 40px;">
             <h2 class="card-title"><i class="fa-solid fa-utensils"></i> Full Catering Menu Options</h2>
-            
             <div class="grid-2" style="margin-bottom: 0; gap: 20px;">
                 <div>
                     <h3 class="menu-section-title">Protein Choices</h3>
@@ -439,7 +448,6 @@
                         <li><span>Gyoza (6pcs)</span><span class="price-badge">$10</span></li>
                         <li><span>Edamame</span><span class="price-badge">$10</span></li>
                     </ul>
-
                     <h3 class="menu-section-title">Side Orders</h3>
                     <div style="max-height: 220px; overflow-y: auto; padding-right: 5px;">
                         <ul class="menu-list">
@@ -489,9 +497,7 @@
                 <h2 class="card-title"><i class="fa-solid fa-shield-halved"></i> Payment & Cancellation</h2>
                 <p><strong>Accepted Payment Methods:</strong></p>
                 <p style="color: var(--gold); margin-bottom: 12px; font-weight: 600;">Cash, Zelle, Venmo, PayPal</p>
-                
                 <p><strong>Deposit Required:</strong> 20% of the calculated total amount.</p>
-                
                 <div style="border-top: 1px solid var(--border-color); margin-top: 15px; padding-top: 10px;">
                     <p style="color: var(--red-accent); font-weight: bold;"><i class="fa-solid fa-triangle-exclamation"></i> Cancellation Policy:</p>
                     <p style="font-size: 0.9rem; color: var(--text-muted);">Cancellations must be made at least <strong>72 hours prior</strong> to the scheduled event time to receive a full deposit refund. Cancellations inside the 72-hour window are strictly non-refundable.</p>
@@ -527,7 +533,7 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="startTime">Start Time * <span class="note-text">(Available 11:30 AM - 10:00 PM)</span></label>
+                        <label for="startTime">Start Time * <span class="note-text">(11:30 AM - 10:00 PM)</span></label>
                         <select id="startTime" name="start_time" required>
                             <option value="" disabled selected>Select start time</option>
                             <option value="11:30 AM">11:30 AM</option>
@@ -562,8 +568,8 @@
                     <p class="note-text"><i class="fa-solid fa-tree"></i> Note: We can cook both inside or outside venues, including residential properties, parks, or by the sea!</p>
                 </div>
 
-                <div style="background: var(--gold-light); padding: 20px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #ebdcb9;">
-                    <h4 style="color:var(--text-dark); margin-bottom: 15px;"><i class="fa-solid fa-users"></i> Guest Counts & Plans</h4>
+                <div class="form-section-divider" style="background: var(--gold-light); border-color:#ebdcb9;">
+                    <h4 style="color:var(--text-dark); margin-bottom: 15px;"><i class="fa-solid fa-users"></i> 1. Guest Counts & Packages</h4>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="basicAdults">Basic Plan Adults ($55/ea) * <br><small style="font-weight:normal;color:var(--text-muted);">2 proteins per person</small></label>
@@ -575,114 +581,88 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group" style="grid-column: span 2;">
+                        <div class="form-group" style="grid-column: span 2; margin-bottom:0;">
                             <label for="childrenCount">Children ($30/ea) * <br><small style="font-weight:normal;color:var(--text-muted);">2 proteins per person</small></label>
                             <input type="number" id="childrenCount" name="count_children" min="0" value="0" required>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="specialRequests">Special Requests / Preferred Proteins / Allergies</label>
-                    <textarea id="specialRequests" name="special_requests" rows="3" placeholder="List your selected protein choices per guest or any notes..."></textarea>
+                <div class="form-section-divider">
+                    <h4 style="color:var(--text-dark); margin-bottom: 10px;"><i class="fa-solid fa-shrimp"></i> 2. Food Choice Quantities</h4>
+                    <p class="note-text" style="margin-bottom: 15px;">Specify desired total item quantities for your event party group below:</p>
+                    
+                    <h5 class="menu-section-title">Protein Choices</h5>
+                    <div class="food-order-container"><span class="food-order-name">Chicken (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Chicken" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Steak (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Steak" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Shrimp (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Shrimp" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Scallops (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Scallops" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Salmon (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Salmon" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Vegetable (+Tofu) (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Vegetable (+Tofu)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Filet Mignon (+$5 upgrade)</span><input type="number" class="food-order-qty qty-protein" data-name="Filet Mignon (+$5)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Lobster Tail (+$10 upgrade)</span><input type="number" class="food-order-qty qty-protein" data-name="Lobster Tail (+$10)" min="0" value="0"></div>
+
+                    <h5 class="menu-section-title" style="margin-top:20px;">Appetizers</h5>
+                    <div class="food-order-container"><span class="food-order-name">Gyoza 6pcs ($10)</span><input type="number" class="food-order-qty qty-appetizer" data-name="Gyoza 6pcs ($10)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Edamame ($10)</span><input type="number" class="food-order-qty qty-appetizer" data-name="Edamame ($10)" min="0" value="0"></div>
+
+                    <h5 class="menu-section-title" style="margin-top:20px;">Side Orders</h5>
+                    <div class="food-order-container"><span class="food-order-name">Fried Rice (+$5)</span><input type="number" class="food-order-qty qty-side" data-name="Fried Rice (+$5)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">White Rice (+$5)</span><input type="number" class="food-order-qty qty-side" data-name="White Rice (+$5)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Noodles (+$5)</span><input type="number" class="food-order-qty qty-side" data-name="Noodles (+$5)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Chicken Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Chicken Side (+$10)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Steak Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Steak Side (+$10)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Shrimp Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Shrimp Side (+$10)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Scallops Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Scallops Side (+$10)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Salmon Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Salmon Side (+$10)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Vegetable Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Vegetable Side (+$10)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Filet Mignon Side (+$15)</span><input type="number" class="food-order-qty qty-side" data-name="Filet Mignon Side (+$15)" min="0" value="0"></div>
+                    <div class="food-order-container"><span class="food-order-name">Lobster Tail Side (+$15)</span><input type="number" class="food-order-qty qty-side" data-name="Lobster Tail Side (+$15)" min="0" value="0"></div>
                 </div>
 
-                <input type="hidden" id="pdfDataUri" name="pdf_attachment">
+                <input type="hidden" id="email_proteins" name="selected_proteins">
+                <input type="hidden" id="email_appetizers" name="selected_appetizers">
+                <input type="hidden" id="email_sides" name="selected_sides">
+
+                <div class="form-group">
+                    <label for="specialRequests">Special Notes / Allergies / Timeline Details</label>
+                    <textarea id="specialRequests" name="special_requests" rows="3" placeholder="Enter any extra custom notes here..."></textarea>
+                </div>
 
                 <button type="submit" class="btn-submit" id="submitBtn">Complete & Submit Booking Request</button>
             </form>
         </div>
-
     </div>
 
     <div id="pdf-template">
-        <h1 id="pdf-header">Booking Form Request Receipt</h1>
+        <h1>Booking Form Request Receipt</h1>
         <p><strong>Mr Yami Hibachi At Home</strong></p>
-        <p>Thank you for submitting your booking. Below are your event submission details:</p>
+        <p>Thank you for submitting your live cooking request! Below are your structured details:</p>
+        
+        <div class="pdf-section-header">Client & Core Logistics</div>
         <table>
-            <tr><th>Detail Field</th><th>Client Entry Value</th></tr>
-            <tr><td>Client Name</td><td id="pdf-name"></td></tr>
-            <tr><td>Contact Email</td><td id="pdf-email"></td></tr>
-            <tr><td>Contact Phone</td><td id="pdf-phone"></td></tr>
-            <tr><td>Event Date</td><td id="pdf-date"></td></tr>
-            <tr><td>Target Start Time</td><td id="pdf-time"></td></tr>
-            <tr><td>State Location</td><td id="pdf-state"></td></tr>
-            <tr><td>Full Cook Address</td><td id="pdf-address"></td></tr>
-            <tr><td>Basic Plan Adults ($55)</td><td id="pdf-basic"></td></tr>
-            <tr><td>Deluxe Plan Adults ($65)</td><td id="pdf-deluxe"></td></tr>
-            <tr><td>Children Amount ($30)</td><td id="pdf-child"></td></tr>
-            <tr><td>Special Requests / Choices</td><td id="pdf-requests"></td></tr>
+            <tr><td><strong>Client Name:</strong></td><td id="pdf-name"></td><td><strong>Event Date:</strong></td><td id="pdf-date"></td></tr>
+            <tr><td><strong>Email:</strong></td><td id="pdf-email"></td><td><strong>Start Time:</strong></td><td id="pdf-time"></td></tr>
+            <tr><td><strong>Phone Line:</strong></td><td id="pdf-phone"></td><td><strong>State Area:</strong></td><td id="pdf-state"></td></tr>
+            <tr><td><strong>Venue Address:</strong></td><td colspan="3" id="pdf-address"></td></tr>
         </table>
-        <p style="margin-top:20px; font-size:11px; color:#666;">* Final quotes incorporating local geographic regional taxes & adjustments will be sent during client confirmation follow-up calls.</p>
+
+        <div class="pdf-section-header">Packages Overview</div>
+        <table>
+            <tr><th>Basic Adults ($55)</th><th>Deluxe Adults ($65)</th><th>Children Count ($30)</th></tr>
+            <tr><td id="pdf-basic">0</td><td id="pdf-deluxe">0</td><td id="pdf-child">0</td></tr>
+        </table>
+
+        <div class="pdf-section-header">Selected Item Quantities</div>
+        <table>
+            <tr><th style="width: 50%;">Menu Selection Item</th><th>Requested Quantity</th></tr>
+            <tbody id="pdf-food-rows">
+                </tbody>
+        </table>
+
+        <div class="pdf-section-header">Additional Notes / Allergies</div>
+        <p id="pdf-requests" style="font-size: 13px; background:#f9f9f9; padding:10px; border:1px solid #ddd; border-radius:4px;"></p>
+        <p style="margin-top:20px; font-size:11px; color:#666;">* Final operational cost matrix updates including relative regional parameters will be executed manually over client validation call sessions.</p>
     </div>
 
-    <a href="#booking-section" class="floating-book-btn">
-        <i class="fa-solid fa-calendar-days"></i> Book Online
-    </a>
-
-    <footer>
-        <p>© 2026 Mr Yami Hibachi At Home. All Rights Reserved.</p>
-        <p style="font-size:0.8rem; margin-top:5px; color:#666;">Premium Mobile Hibachi Chefs & Dynamic Home Events.</p>
-    </footer>
-
-    <script>
-        // Initialize EmailJS with your credential string
-        (function() {
-            emailjs.init("LCOpJ2w6UegSang_j"); 
-        })();
-
-        document.getElementById('hibachiBookingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const submitButton = document.getElementById('submitBtn');
-            submitButton.innerText = "Processing & Saving Form...";
-            submitButton.disabled = true;
-
-            // Step 1: Map form values directly into the hidden structure for PDF extraction
-            document.getElementById('pdf-name').innerText = document.getElementById('fullName').value;
-            document.getElementById('pdf-email').innerText = document.getElementById('email').value;
-            document.getElementById('pdf-phone').innerText = document.getElementById('phone').value;
-            document.getElementById('pdf-date').innerText = document.getElementById('eventDate').value;
-            document.getElementById('pdf-time').innerText = document.getElementById('startTime').value;
-            document.getElementById('pdf-state').innerText = document.getElementById('stateSelect').value;
-            document.getElementById('pdf-address').innerText = document.getElementById('address').value;
-            document.getElementById('pdf-basic').innerText = document.getElementById('basicAdults').value;
-            document.getElementById('pdf-deluxe').innerText = document.getElementById('deluxeAdults').value;
-            document.getElementById('pdf-child').innerText = document.getElementById('childrenCount').value;
-            document.getElementById('pdf-requests').innerText = document.getElementById('specialRequests').value || 'None specified';
-
-            // Step 2: Extract layout elements to produce the PDF document
-            const element = document.getElementById('pdf-template');
-            element.style.display = 'block'; 
-
-            const opt = {
-                margin:       10,
-                filename:     'Yami_Hibachi_Booking_Summary.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            // Generate raw PDF output as a Data URI 
-            html2pdf().from(element).set(opt).outputPdf('datauristring').then(function(pdfDataUriString) {
-                element.style.display = 'none';
-                document.getElementById('pdfDataUri').value = pdfDataUriString;
-
-                // Step 3: Trigger EmailJS sending mechanism
-                // REMINDER: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with dashboard values
-                emailjs.sendForm('service_df3zxal', 'template_y12igxq', event.target)
-                    .then(function() {
-                        alert('Success! Your booking request has been securely sent to Mr Yami Hibachi At Home. We will review your requests and follow up with you shortly!');
-                        document.getElementById('hibachiBookingForm').reset();
-                        submitButton.innerText = "Complete & Submit Booking Request";
-                        submitButton.disabled = false;
-                    }, function(error) {
-                        alert('Email dispatch processing failed. Please call our team directly via phone details listed above. Error details: ' + JSON.stringify(error));
-                        submitButton.innerText = "Complete & Submit Booking Request";
-                        submitButton.disabled = false;
-                    });
-            });
-        });
-    </script>
-</body>
-</html>
+    
