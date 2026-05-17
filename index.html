@@ -175,11 +175,81 @@
 
 <body>
 
-<header>
+<header class="hero-header">
+  <style>
+    .hero-header {
+      text-align: center;
+      padding: 24px 16px;
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero-header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .hero-header p {
+      margin: 6px 0;
+      font-size: 14px;
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    .hero-header a {
+      color: #ffd166;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hours {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .book-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 22px;
+      background: #c62828;
+      color: #fff !important;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+
   <h1>Mr Yami Hibachi At Home</h1>
+
   <p>Premium Private Hibachi Catering</p>
-  <p> Contact: Tony +18287197700 | Jason +19296881138
+
+  <p>
+    Contact:
+    <a href="tel:+18287197700">
+      Tony +1 (828) 719-7700
+    </a>
+    |
+    <a href="tel:+19296881138">
+      Jason +1 (929) 688-1138
+    </a>
+  </p>
+
+  <div class="hours">
+    <strong>Hours of Operation</strong><br>
+    11:30 AM - 10:00 PM<br>
+    7 Days a Week
+  </div>
+
+  <!-- Replace #booking-form with your actual form link -->
+  <a href="#booking-form" class="book-btn">
+    Book Now
+  </a>
 </header>
+
 
 <section class="pricing-mini">
   <style>
