@@ -141,6 +141,24 @@
       padding-top: 10px;
     }
 
+    .gratuity-block {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--gold);
+    }
+
+    .gratuity-heading {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .gratuity-line span:last-child {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
     button {
       width: 100%;
       padding: 15px;
@@ -798,6 +816,22 @@
         <span>20% Deposit</span>
         <span id="deposit">$0.00</span>
       </div>
+
+      <div class="gratuity-block">
+        <div class="gratuity-heading">Suggested Gratuity (not included in total)</div>
+        <div class="summary-line gratuity-line">
+          <span>20%</span>
+          <span id="gratuity20">$0.00</span>
+        </div>
+        <div class="summary-line gratuity-line">
+          <span>25%</span>
+          <span id="gratuity25">$0.00</span>
+        </div>
+        <div class="summary-line gratuity-line">
+          <span>30%</span>
+          <span id="gratuity30">$0.00</span>
+        </div>
+      </div>
     </div>
 
     <button type="submit" id="submitBtn">Submit Booking Request</button>
@@ -842,6 +876,14 @@
       num("deluxeAdults") +
       num("childrenCount")
     );
+  }
+
+  function suggestedGratuity(billTotal) {
+    return {
+      g20: money(billTotal * 0.2),
+      g25: money(billTotal * 0.25),
+      g30: money(billTotal * 0.3)
+    };
   }
 
   function calculateTotal() {
@@ -922,6 +964,17 @@
 
     document.getElementById("deposit").textContent =
       money(total * 0.2);
+
+    const gratuity = suggestedGratuity(total);
+
+    document.getElementById("gratuity20").textContent =
+      gratuity.g20;
+
+    document.getElementById("gratuity25").textContent =
+      gratuity.g25;
+
+    document.getElementById("gratuity30").textContent =
+      gratuity.g30;
   }
 
   document
@@ -978,6 +1031,7 @@
     const tax = subtotal * taxRate;
     const total = subtotal + tax;
     const deposit = total * 0.2;
+    const gratuity = suggestedGratuity(total);
 
     return {
       from_name: val("fullName"),
@@ -1023,6 +1077,9 @@
       tax_amount: money(tax),
       grand_total: money(total),
       deposit: money(deposit),
+      gratuity_20: gratuity.g20,
+      gratuity_25: gratuity.g25,
+      gratuity_30: gratuity.g30,
       booking_details: [
         "CONTACT",
         `Name: ${val("fullName")}`,
@@ -1075,7 +1132,12 @@
         `Subtotal: ${money(subtotal)}`,
         `Sales Tax (${(taxRate * 100).toFixed(3)}%): ${money(tax)}`,
         `Estimated Total: ${money(total)}`,
-        `20% Deposit: ${money(deposit)}`
+        `20% Deposit: ${money(deposit)}`,
+        "",
+        "SUGGESTED GRATUITY (not included in total)",
+        `20%: ${gratuity.g20}`,
+        `25%: ${gratuity.g25}`,
+        `30%: ${gratuity.g30}`
       ].join("\n")
     };
   }
