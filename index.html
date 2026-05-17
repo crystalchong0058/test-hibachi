@@ -34,12 +34,37 @@
             background-color: var(--light-bg);
             color: var(--text-dark);
             line-height: 1.6;
+            position: relative;
+        }
+
+        /* Floating Top-Left Logo Styling */
+        .floating-logo-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: inline-block;
+        }
+
+        .floating-logo {
+            width: 140px;
+            height: auto;
+            border-radius: 12px;
+            background-color: white;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 2px solid var(--gold);
+            transition: transform 0.2s ease;
+        }
+
+        .floating-logo:hover {
+            transform: scale(1.04);
         }
 
         /* Banner remains dark and premium */
         header {
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
-            padding: 80px 20px;
+            padding: 100px 20px 80px 20px;
             text-align: center;
             border-bottom: 4px solid var(--gold);
         }
@@ -51,6 +76,7 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-top: 20px; /* Space for the floating logo on smaller monitors */
         }
 
         .header-tagline {
@@ -88,7 +114,7 @@
             margin-bottom: 40px;
         }
 
-        /* Cards converted to Light Mode styling */
+        /* Cards Style */
         .card {
             background-color: var(--card-bg);
             padding: 30px;
@@ -247,7 +273,7 @@
         .provide-list.we i { color: #2ecc71; }
         .provide-list.you i { color: #e74c3c; }
 
-        /* Floating action button for phone-heavy traffic */
+        /* Bottom Floating Book Button for Mobile Devices */
         .floating-book-btn {
             position: fixed;
             bottom: 20px;
@@ -275,7 +301,7 @@
             border-top: 1px solid #222;
         }
 
-        /* Hidden PDF receipt template container used by html2pdf */
+        /* Hidden PDF Container used by html2pdf */
         #pdf-template {
             display: none;
             background: white;
@@ -288,8 +314,22 @@
         #pdf-template th, #pdf-template td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         #pdf-template th { background-color: #f5f5f5; }
 
+        /* Responsive Breakpoints */
         @media (max-width: 768px) {
-            .header-title { font-size: 2.1rem; }
+            .floating-logo {
+                width: 90px;
+                top: 10px;
+                left: 10px;
+                border-radius: 8px;
+            }
+            .floating-logo-link {
+                top: 10px;
+                left: 10px;
+            }
+            header {
+                padding: 120px 15px 60px 15px;
+            }
+            .header-title { font-size: 2.0rem; margin-top: 0; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
             .floating-book-btn { display: flex; }
         }
@@ -299,6 +339,10 @@
     </style>
 </head>
 <body>
+
+    <a href="#" class="floating-logo-link">
+        <img src="https://i.imgur.com/8Yv6Vsh.png" alt="Mr Yami Logo" class="floating-logo">
+    </a>
 
     <header>
         <h1 class="header-title">Mr Yami Hibachi At Home</h1>
@@ -582,7 +626,7 @@
     </footer>
 
     <script>
-        // Initialize EmailJS with your active individual credentials
+        // Initialize EmailJS with your credential string
         (function() {
             emailjs.init("LCOpJ2w6UegSang_j"); 
         })();
@@ -594,7 +638,7 @@
             submitButton.innerText = "Processing & Saving Form...";
             submitButton.disabled = true;
 
-            // Step 1: Map form values directly into the hidden styling structure for PDF extraction
+            // Step 1: Map form values directly into the hidden structure for PDF extraction
             document.getElementById('pdf-name').innerText = document.getElementById('fullName').value;
             document.getElementById('pdf-email').innerText = document.getElementById('email').value;
             document.getElementById('pdf-phone').innerText = document.getElementById('phone').value;
@@ -624,9 +668,9 @@
                 element.style.display = 'none';
                 document.getElementById('pdfDataUri').value = pdfDataUriString;
 
-                // Step 3: Trigger the EmailJS dispatch mechanism
-                // CRITICAL REMINDER: Swap "YOUR_SERVICE_ID" and "YOUR_TEMPLATE_ID" inside your live build
-                emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', event.target)
+                // Step 3: Trigger EmailJS sending mechanism
+                // REMINDER: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with dashboard values
+                emailjs.sendForm('service_df3zxal', 'template_y12igxq', event.target)
                     .then(function() {
                         alert('Success! Your booking request has been securely sent to Mr Yami Hibachi At Home. We will review your requests and follow up with you shortly!');
                         document.getElementById('hibachiBookingForm').reset();
