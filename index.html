@@ -143,12 +143,10 @@
             letter-spacing: 1px;
             font-weight: 700;
         }
-
         .menu-list {
             list-style: none;
             margin-bottom: 15px;
         }
-
         .menu-list li {
             display: flex;
             justify-content: space-between;
@@ -156,7 +154,6 @@
             border-bottom: 1px dashed var(--border-color);
             font-size: 0.95rem;
         }
-
         .price-badge {
             color: var(--gold);
             font-weight: 600;
@@ -168,20 +165,13 @@
             align-items: flex-start;
             gap: 12px;
         }
-
-        .info-item i {
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin-top: 4px;
-        }
-
+        .info-item i { color: var(--gold); font-size: 1.2rem; margin-top: 4px; }
         .contact-link {
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
-
         .contact-link:hover { color: var(--gold); }
 
         .btn-review {
@@ -197,10 +187,8 @@
             transition: background 0.3s;
             width: 100%;
         }
-
         .btn-review:hover { background-color: #357ae8; }
 
-        /* Form Controls */
         .form-group { margin-bottom: 20px; }
         label {
             display: block;
@@ -209,7 +197,6 @@
             font-size: 0.9rem;
             color: var(--text-dark);
         }
-
         input, select, textarea {
             width: 100%;
             padding: 12px;
@@ -218,48 +205,52 @@
             color: var(--text-dark);
             border-radius: 5px;
             font-size: 1rem;
-            transition: border-color 0.3s, background-color 0.3s;
         }
-
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--gold);
             background-color: #ffffff;
         }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
-
-        /* Order Form Grid Items Styling */
-        .food-order-container {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 15px;
-            padding: 8px 0;
-            border-bottom: 1px solid #f1f1f1;
-        }
-
-        .food-order-name {
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .food-order-qty {
-            width: 75px !important;
-            padding: 6px 8px !important;
-            text-align: center;
-        }
-
-        .form-section-divider {
-            background: #fafafa;
-            padding: 15px;
+        
+        /* Live Pricing Breakdown Box */
+        .price-summary-box {
+            background-color: #fffdf7;
+            border: 2px dashed var(--gold);
             border-radius: 6px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .price-summary-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            border-bottom: 1px solid #ebdcb9;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+        }
+        .price-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .price-line.total-bold {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-top: 1px solid #ebdcb9;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        .price-line.deposit-highlight {
+            color: var(--red-accent);
+            font-weight: 700;
         }
 
         .btn-submit {
@@ -277,17 +268,11 @@
             margin-top: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-
         .btn-submit:hover {
             background-color: #252525;
             transform: translateY(-2px);
         }
-
-        .note-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 5px;
-        }
+        .note-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }
 
         .provide-list { list-style: none; }
         .provide-list li {
@@ -324,10 +309,8 @@
             background-color: var(--dark-banner);
             color: #888888;
             font-size: 0.9rem;
-            border-top: 1px solid #222;
         }
 
-        /* Printable PDF Styling layout */
         #pdf-template {
             display: none;
             background: white;
@@ -335,11 +318,10 @@
             padding: 40px;
             font-family: Arial, sans-serif;
         }
-        #pdf-template h1 { color: #111; border-bottom: 2px solid #c39b50; padding-bottom: 10px; font-size: 22px; }
-        #pdf-template table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 20px; }
-        #pdf-template th, #pdf-template td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; font-size: 13px; }
+        #pdf-template h1 { color: #111; border-bottom: 2px solid #c39b50; padding-bottom: 10px; }
+        #pdf-template table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        #pdf-template th, #pdf-template td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         #pdf-template th { background-color: #f5f5f5; }
-        .pdf-section-header { font-size: 14px; font-weight: bold; color: #c39b50; margin-top: 15px; margin-bottom: 5px; text-transform: uppercase; }
 
         @media (max-width: 768px) {
             .floating-logo { width: 90px; top: 10px; left: 10px; border-radius: 8px; }
@@ -347,7 +329,9 @@
             header { padding: 120px 15px 60px 15px; }
             .header-title { font-size: 2.0rem; margin-top: 0; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
+            .floating-book-btn { display: flex; }
         }
+        @media (min-width: 769px) { .floating-book-btn { display: none; } }
     </style>
 </head>
 <body>
@@ -391,7 +375,7 @@
                         We provide premium sake at no additional cost to enhance your dining experience! Fresh salad is also included for all guests.
                     </p>
                 </div>
-                <p class="note-text" style="margin-top: 15px; text-align: center;"><i class="fa-solid fa-percent"></i> Sales tax will be calculated based on event location.</p>
+                <p class="note-text" style="margin-top: 15px; text-align: center;"><i class="fa-solid fa-percent"></i> Sales tax based on location (Est. NY rate used below).</p>
             </div>
 
             <div class="card">
@@ -497,7 +481,7 @@
                 <h2 class="card-title"><i class="fa-solid fa-shield-halved"></i> Payment & Cancellation</h2>
                 <p><strong>Accepted Payment Methods:</strong></p>
                 <p style="color: var(--gold); margin-bottom: 12px; font-weight: 600;">Cash, Zelle, Venmo, PayPal</p>
-                <p><strong>Deposit Required:</strong> 20% of the calculated total amount.</p>
+                <p><strong>Deposit Required:</strong> 20% of total invoice layout amount.</p>
                 <div style="border-top: 1px solid var(--border-color); margin-top: 15px; padding-top: 10px;">
                     <p style="color: var(--red-accent); font-weight: bold;"><i class="fa-solid fa-triangle-exclamation"></i> Cancellation Policy:</p>
                     <p style="font-size: 0.9rem; color: var(--text-muted);">Cancellations must be made at least <strong>72 hours prior</strong> to the scheduled event time to receive a full deposit refund. Cancellations inside the 72-hour window are strictly non-refundable.</p>
@@ -568,101 +552,8 @@
                     <p class="note-text"><i class="fa-solid fa-tree"></i> Note: We can cook both inside or outside venues, including residential properties, parks, or by the sea!</p>
                 </div>
 
-                <div class="form-section-divider" style="background: var(--gold-light); border-color:#ebdcb9;">
-                    <h4 style="color:var(--text-dark); margin-bottom: 15px;"><i class="fa-solid fa-users"></i> 1. Guest Counts & Packages</h4>
+                <div style="background: var(--gold-light); padding: 20px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #ebdcb9;">
+                    <h4 style="color:var(--text-dark); margin-bottom: 15px;"><i class="fa-solid fa-users"></i> Guest Counts & Plans</h4>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="basicAdults">Basic Plan Adults ($55/ea) * <br><small style="font-weight:normal;color:var(--text-muted);">2 proteins per person</small></label>
-                            <input type="number" id="basicAdults" name="count_basic_adults" min="0" value="0" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="deluxeAdults">Deluxe Plan Adults ($65/ea) * <br><small style="font-weight:normal;color:var(--text-muted);">3 proteins per person</small></label>
-                            <input type="number" id="deluxeAdults" name="count_deluxe_adults" min="0" value="0" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group" style="grid-column: span 2; margin-bottom:0;">
-                            <label for="childrenCount">Children ($30/ea) * <br><small style="font-weight:normal;color:var(--text-muted);">2 proteins per person</small></label>
-                            <input type="number" id="childrenCount" name="count_children" min="0" value="0" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-section-divider">
-                    <h4 style="color:var(--text-dark); margin-bottom: 10px;"><i class="fa-solid fa-shrimp"></i> 2. Food Choice Quantities</h4>
-                    <p class="note-text" style="margin-bottom: 15px;">Specify desired total item quantities for your event party group below:</p>
-                    
-                    <h5 class="menu-section-title">Protein Choices</h5>
-                    <div class="food-order-container"><span class="food-order-name">Chicken (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Chicken" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Steak (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Steak" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Shrimp (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Shrimp" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Scallops (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Scallops" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Salmon (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Salmon" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Vegetable (+Tofu) (Included)</span><input type="number" class="food-order-qty qty-protein" data-name="Vegetable (+Tofu)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Filet Mignon (+$5 upgrade)</span><input type="number" class="food-order-qty qty-protein" data-name="Filet Mignon (+$5)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Lobster Tail (+$10 upgrade)</span><input type="number" class="food-order-qty qty-protein" data-name="Lobster Tail (+$10)" min="0" value="0"></div>
-
-                    <h5 class="menu-section-title" style="margin-top:20px;">Appetizers</h5>
-                    <div class="food-order-container"><span class="food-order-name">Gyoza 6pcs ($10)</span><input type="number" class="food-order-qty qty-appetizer" data-name="Gyoza 6pcs ($10)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Edamame ($10)</span><input type="number" class="food-order-qty qty-appetizer" data-name="Edamame ($10)" min="0" value="0"></div>
-
-                    <h5 class="menu-section-title" style="margin-top:20px;">Side Orders</h5>
-                    <div class="food-order-container"><span class="food-order-name">Fried Rice (+$5)</span><input type="number" class="food-order-qty qty-side" data-name="Fried Rice (+$5)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">White Rice (+$5)</span><input type="number" class="food-order-qty qty-side" data-name="White Rice (+$5)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Noodles (+$5)</span><input type="number" class="food-order-qty qty-side" data-name="Noodles (+$5)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Chicken Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Chicken Side (+$10)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Steak Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Steak Side (+$10)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Shrimp Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Shrimp Side (+$10)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Scallops Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Scallops Side (+$10)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Salmon Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Salmon Side (+$10)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Vegetable Side (+$10)</span><input type="number" class="food-order-qty qty-side" data-name="Vegetable Side (+$10)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Filet Mignon Side (+$15)</span><input type="number" class="food-order-qty qty-side" data-name="Filet Mignon Side (+$15)" min="0" value="0"></div>
-                    <div class="food-order-container"><span class="food-order-name">Lobster Tail Side (+$15)</span><input type="number" class="food-order-qty qty-side" data-name="Lobster Tail Side (+$15)" min="0" value="0"></div>
-                </div>
-
-                <input type="hidden" id="email_proteins" name="selected_proteins">
-                <input type="hidden" id="email_appetizers" name="selected_appetizers">
-                <input type="hidden" id="email_sides" name="selected_sides">
-
-                <div class="form-group">
-                    <label for="specialRequests">Special Notes / Allergies / Timeline Details</label>
-                    <textarea id="specialRequests" name="special_requests" rows="3" placeholder="Enter any extra custom notes here..."></textarea>
-                </div>
-
-                <button type="submit" class="btn-submit" id="submitBtn">Complete & Submit Booking Request</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="pdf-template">
-        <h1>Booking Form Request Receipt</h1>
-        <p><strong>Mr Yami Hibachi At Home</strong></p>
-        <p>Thank you for submitting your live cooking request! Below are your structured details:</p>
-        
-        <div class="pdf-section-header">Client & Core Logistics</div>
-        <table>
-            <tr><td><strong>Client Name:</strong></td><td id="pdf-name"></td><td><strong>Event Date:</strong></td><td id="pdf-date"></td></tr>
-            <tr><td><strong>Email:</strong></td><td id="pdf-email"></td><td><strong>Start Time:</strong></td><td id="pdf-time"></td></tr>
-            <tr><td><strong>Phone Line:</strong></td><td id="pdf-phone"></td><td><strong>State Area:</strong></td><td id="pdf-state"></td></tr>
-            <tr><td><strong>Venue Address:</strong></td><td colspan="3" id="pdf-address"></td></tr>
-        </table>
-
-        <div class="pdf-section-header">Packages Overview</div>
-        <table>
-            <tr><th>Basic Adults ($55)</th><th>Deluxe Adults ($65)</th><th>Children Count ($30)</th></tr>
-            <tr><td id="pdf-basic">0</td><td id="pdf-deluxe">0</td><td id="pdf-child">0</td></tr>
-        </table>
-
-        <div class="pdf-section-header">Selected Item Quantities</div>
-        <table>
-            <tr><th style="width: 50%;">Menu Selection Item</th><th>Requested Quantity</th></tr>
-            <tbody id="pdf-food-rows">
-                </tbody>
-        </table>
-
-        <div class="pdf-section-header">Additional Notes / Allergies</div>
-        <p id="pdf-requests" style="font-size: 13px; background:#f9f9f9; padding:10px; border:1px solid #ddd; border-radius:4px;"></p>
-        <p style="margin-top:20px; font-size:11px; color:#666;">* Final operational cost matrix updates including relative regional parameters will be executed manually over client validation call sessions.</p>
-    </div>
-
-    
+                            
