@@ -2,36 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content=
-    "width=device-width,
-    initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Yami Hibachi At Home</title>
 
-  <title>
-    Mr Yami Hibachi At Home
-  </title>
-
-  <link
-    href=
-    "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <link
-    rel="stylesheet"
-    href=
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-
-  <script src=
-  "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-  </script>
-
-  <script src=
-  "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -39,16 +13,15 @@
       --dark: #121212;
       --light: #fcfcfc;
       --card: #ffffff;
-      --muted: #666666;
       --border: #e5e5e5;
-      --gold-light: #f8f1e2;
+      --muted: #666;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: Poppins, sans-serif;
     }
 
     body {
@@ -58,353 +31,143 @@
     }
 
     header {
-      background:
-      linear-gradient(
-        rgba(0,0,0,.7),
-        rgba(0,0,0,.7)
-      ),
-      url(
-      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1600"
-      );
-
+      background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+      url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1600");
       background-size: cover;
       background-position: center;
-
       text-align: center;
-
-      padding:
-      120px 20px 90px;
-
-      border-bottom:
-      4px solid var(--gold);
+      padding: 90px 20px;
+      border-bottom: 4px solid var(--gold);
     }
 
-    .logo {
-      width: 120px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      border: 2px solid var(--gold);
-      background: white;
-      padding: 5px;
-    }
-
-    .header-title {
-      font-family:
-      "Playfair Display",
-      serif;
-
+    header h1 {
       color: var(--gold);
-
+      font-family: "Playfair Display", serif;
       font-size: 3rem;
-
-      margin-bottom: 10px;
     }
 
-    .header-sub {
+    header p {
       color: white;
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-    }
-
-    .hero-btn {
-      display: inline-block;
-
-      background: var(--gold);
-
-      color: white;
-
-      text-decoration: none;
-
-      padding:
-      14px 32px;
-
-      border-radius: 40px;
-
-      font-weight: 700;
-
-      transition: .3s;
-    }
-
-    .hero-btn:hover {
-      background: #a67f3e;
-    }
-
-    .quote {
-      margin-top: 25px;
-
-      color: #ff7280;
-
-      font-size: 1.2rem;
-
-      font-family:
-      "Playfair Display",
-      serif;
+      margin-top: 10px;
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 35px 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.05);
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #f2e7d3;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: var(--gold);
+      margin: 20px 0 10px;
+      text-transform: uppercase;
+      font-size: 1rem;
     }
 
     .grid-2 {
       display: grid;
-
-      grid-template-columns:
-      repeat(
-        auto-fit,
-        minmax(320px, 1fr)
-      );
-
-      gap: 25px;
-
-      margin-bottom: 30px;
-    }
-
-    .card {
-      background: var(--card);
-
-      border:
-      1px solid var(--border);
-
-      border-radius: 10px;
-
-      padding: 25px;
-
-      box-shadow:
-      0 4px 12px
-      rgba(0,0,0,.05);
-    }
-
-    .card h2 {
-      font-family:
-      "Playfair Display",
-      serif;
-
-      margin-bottom: 18px;
-
-      color: #111;
-
-      border-bottom:
-      2px solid
-      var(--gold-light);
-
-      padding-bottom: 10px;
-    }
-
-    .menu-list {
-      list-style: none;
-    }
-
-    .menu-list li {
-      display: flex;
-
-      justify-content:
-      space-between;
-
-      border-bottom:
-      1px dashed
-      var(--border);
-
-      padding: 8px 0;
-    }
-
-    .gold {
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .highlight {
-      background:
-      var(--gold-light);
-
-      border:
-      1px solid
-      var(--gold);
-
-      border-radius: 8px;
-
-      padding: 15px;
-
-      margin-top: 20px;
-    }
-
-    .info-item {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .info-item i {
-      color: var(--gold);
-      margin-top: 4px;
-    }
-
-    .review-btn {
-      display: block;
-
-      width: 100%;
-
-      text-align: center;
-
-      background: #4285f4;
-
-      color: white;
-
-      text-decoration: none;
-
-      padding: 12px;
-
-      border-radius: 6px;
-
-      margin-top: 20px;
-
-      font-weight: 700;
-    }
-
-    form {
-      margin-top: 10px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-row {
-      display: grid;
-
-      grid-template-columns:
-      1fr 1fr;
-
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
     }
 
     label {
       display: block;
-      margin-bottom: 7px;
       font-weight: 600;
-      font-size: .9rem;
+      margin-bottom: 6px;
     }
 
     input,
     select,
     textarea {
       width: 100%;
-
-      padding: 12px;
-
-      border:
-      1px solid
-      var(--border);
-
+      padding: 11px;
+      border: 1px solid var(--border);
       border-radius: 6px;
-
       background: #fafafa;
-
       font-size: 1rem;
     }
 
-    textarea {
-      resize: vertical;
-    }
-
-    .checkbox-grid {
+    .row {
       display: grid;
-
-      grid-template-columns:
-      repeat(
-        auto-fit,
-        minmax(220px, 1fr)
-      );
-
+      grid-template-columns: 1fr 100px;
       gap: 10px;
-    }
-
-    .checkbox-item {
-      display: flex;
-      gap: 8px;
       align-items: center;
-
-      background: #fafafa;
-
-      border:
-      1px solid
-      var(--border);
-
-      border-radius: 6px;
-
-      padding: 10px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border);
     }
 
-    .checkbox-item input {
-      width: auto;
+    .note {
+      color: var(--muted);
+      font-size: .85rem;
     }
 
-    .submit-btn {
-      width: 100%;
-
-      background: var(--dark);
-
+    .price {
       color: var(--gold);
-
-      border: none;
-
-      padding: 16px;
-
-      border-radius: 8px;
-
-      font-size: 1rem;
-
       font-weight: 700;
-
-      cursor: pointer;
-
-      margin-top: 15px;
     }
 
-    .submit-btn:hover {
-      background: #252525;
+    .summary {
+      background: #f9f5eb;
+      border: 1px solid var(--gold);
     }
 
-    footer {
-      text-align: center;
-
-      padding: 30px;
-
-      background: var(--dark);
-
-      color: #999;
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 7px 0;
     }
 
-    #pdf-template {
-      display: none;
-
-      background: white;
-
-      color: #333;
-
-      padding: 40px;
+    .total {
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-top: 1px solid var(--gold);
+      margin-top: 10px;
+      padding-top: 10px;
     }
 
-    #pdf-template table {
+    button {
       width: 100%;
-      border-collapse: collapse;
+      padding: 15px;
+      background: var(--dark);
+      color: var(--gold);
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
       margin-top: 20px;
     }
 
-    #pdf-template th,
-    #pdf-template td {
-      border: 1px solid #ddd;
-      padding: 10px;
+    footer {
+      background: var(--dark);
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
     }
 
-    @media(max-width:768px) {
-      .form-row {
-        grid-template-columns: 1fr;
+    @media(max-width: 700px) {
+      header h1 {
+        font-size: 2.1rem;
       }
 
-      .header-title {
-        font-size: 2.1rem;
+      .grid-2 {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -413,655 +176,50 @@
 <body>
 
 <header>
-  <img
-    src=
-    "https://i.ibb.co/62873wJ/4370836bcabf4dcfdf10178ded5107a2.jpg"
-    class="logo"
-    alt="logo"
-  />
-
-  <h1 class="header-title">
-    Mr Yami Hibachi At Home
-  </h1>
-
-  <p class="header-sub">
-    Premium Backyard Hibachi
-    Catering Experience
-  </p>
-
-  <a
-    href="#booking"
-    class="hero-btn"
-  >
-    Book Your Event
-  </a>
-
-  <div class="quote">
-    "More Sake, More Happy."
-  </div>
+  <h1>Mr Yami Hibachi At Home</h1>
+  <p>Premium Private Hibachi Catering</p>
 </header>
 
 <div class="container">
 
-  <div class="grid-2">
+  <form id="bookingForm">
 
     <div class="card">
+      <h2>Customer & Event Info</h2>
 
-      <h2>
-        <i class=
-        "fa-solid fa-tags">
-        </i>
-        Packages
-      </h2>
-
-      <ul class="menu-list">
-        <li>
-          <span>
-            Basic Adult
-          </span>
-
-          <span class="gold">
-            $55
-          </span>
-        </li>
-
-        <li>
-          <span>
-            Deluxe Adult
-          </span>
-
-          <span class="gold">
-            $65
-          </span>
-        </li>
-
-        <li>
-          <span>
-            Children
-          </span>
-
-          <span class="gold">
-            $30
-          </span>
-        </li>
-      </ul>
-
-      <div class="highlight">
-        FREE Premium Sake Included
-      </div>
-
-    </div>
-
-    <div class="card">
-
-      <h2>
-        <i class=
-        "fa-solid fa-phone">
-        </i>
-        Contact
-      </h2>
-
-      <div class="info-item">
-        <i class=
-        "fa-solid fa-phone">
-        </i>
+      <div class="grid-2">
+        <div>
+          <label>Full Name *</label>
+          <input id="fullName" required />
+        </div>
 
         <div>
-          828-719-7700
+          <label>Email *</label>
+          <input id="email" type="email" required />
         </div>
-      </div>
-
-      <div class="info-item">
-        <i class=
-        "fa-solid fa-clock">
-        </i>
 
         <div>
-          11:30 AM - 10 PM
+          <label>Phone *</label>
+          <input id="phone" required />
         </div>
-      </div>
-
-      <div class="info-item">
-        <i class=
-        "fa-solid fa-car">
-        </i>
 
         <div>
-          Richmond:
-          No travel fee
-        </div>
-      </div>
-
-      <a
-        class="review-btn"
-        href=
-        "https://maps.app.goo.gl/nrnQKFXsAHUNkjsd6?g_st=ic"
-        target="_blank"
-      >
-        Leave Google Review
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="card">
-
-    <h2>
-      <i class=
-      "fa-solid fa-utensils">
-      </i>
-      Booking Form
-    </h2>
-
-    <form id="booking">
-
-      <div class="form-row">
-
-        <div class="form-group">
-          <label>
-            Full Name
-          </label>
-
-          <input
-            type="text"
-            id="fullName"
-            required
-          />
+          <label>Event Date *</label>
+          <input id="eventDate" type="date" required />
         </div>
 
-        <div class="form-group">
-          <label>
-            Email
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            required
-          />
-        </div>
-
-      </div>
-
-      <div class="form-row">
-
-        <div class="form-group">
-          <label>
-            Phone
-          </label>
-
-          <input
-            type="tel"
-            id="phone"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label>
-            Event Date
-          </label>
-
-          <input
-            type="date"
-            id="eventDate"
-            required
-          />
-        </div>
-
-      </div>
-
-      <div class="form-group">
-        <label>
-          Address
-        </label>
-
-        <input
-          type="text"
-          id="address"
-          required
-        />
-      </div>
-
-      <div class="form-row">
-
-        <div class="form-group">
-          <label>
-            Basic Adults
-          </label>
-
-          <input
-            type="number"
-            id="basicAdults"
-            value="0"
-            min="0"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>
-            Deluxe Adults
-          </label>
-
-          <input
-            type="number"
-            id="deluxeAdults"
-            value="0"
-            min="0"
-          />
-        </div>
-
-      </div>
-
-      <div class="form-group">
-        <label>
-          Children
-        </label>
-
-        <input
-          type="number"
-          id="childrenCount"
-          value="0"
-          min="0"
-        />
-      </div>
-
-      <div class="form-group">
-
-        <label>
-          Protein Choices
-        </label>
-
-        <div class="checkbox-grid">
-
-          <div class="checkbox-item">
-            <input
-              type="checkbox"
-              id="choice_chicken"
-            />
-            Chicken
-          </div>
-
-          <div class="checkbox-item">
-            <input
-              type="checkbox"
-              id="choice_steak"
-            />
-            Steak
-          </div>
-
-          <div class="checkbox-item">
-            <input
-              type="checkbox"
-              id="choice_shrimp"
-            />
-            Shrimp
-          </div>
-
-          <div class="checkbox-item">
-            <input
-              type="checkbox"
-              id="choice_scallops"
-            />
-            Scallops
-          </div>
-
-          <div class="checkbox-item">
-            <input
-              type="checkbox"
-              id="choice_salmon"
-            />
-            Salmon
-          </div>
-
-          <div class="checkbox-item">
-            <input
-              type="checkbox"
-              id="choice_veg"
-            />
-            Veg + Tofu
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="form-group">
-        <label>
-          Special Requests
-        </label>
-
-        <textarea
-          id="specialRequests"
-          rows="4"
-        ></textarea>
-      </div>
-
-      <button
-        type="submit"
-        class="submit-btn"
-        id="submitBtn"
-      >
-        Submit Booking
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
-
-<div id="pdf-template">
-
-  <h1>
-    Booking Receipt
-  </h1>
-
-  <table>
-
-    <tr>
-      <th>Field</th>
-      <th>Value</th>
-    </tr>
-
-    <tr>
-      <td>Name</td>
-      <td id="pdf-name"></td>
-    </tr>
-
-    <tr>
-      <td>Email</td>
-      <td id="pdf-email"></td>
-    </tr>
-
-    <tr>
-      <td>Phone</td>
-      <td id="pdf-phone"></td>
-    </tr>
-
-    <tr>
-      <td>Date</td>
-      <td id="pdf-date"></td>
-    </tr>
-
-    <tr>
-      <td>Address</td>
-      <td id="pdf-address"></td>
-    </tr>
-
-    <tr>
-      <td>Basic Adults</td>
-      <td id="pdf-basic"></td>
-    </tr>
-
-    <tr>
-      <td>Deluxe Adults</td>
-      <td id="pdf-deluxe"></td>
-    </tr>
-
-    <tr>
-      <td>Children</td>
-      <td id="pdf-child"></td>
-    </tr>
-
-    <tr>
-      <td>Proteins</td>
-      <td id="pdf-proteins"></td>
-    </tr>
-
-    <tr>
-      <td>Requests</td>
-      <td id="pdf-requests"></td>
-    </tr>
-
-  </table>
-
-</div>
-
-<footer>
-  © 2026 Mr Yami Hibachi
-</footer>
-
-<script>
-  (function() {
-    emailjs.init(
-      "YOUR_PUBLIC_KEY"
-    );
-  })();
-
-  const form =
-  document.getElementById(
-    "booking"
-  );
-
-  form.addEventListener(
-    "submit",
-    function(e) {
-
-      e.preventDefault();
-
-      const btn =
-      document.getElementById(
-        "submitBtn"
-      );
-
-      btn.innerText =
-      "Processing...";
-
-      btn.disabled = true;
-
-      const val = id =>
-      document
-      .getElementById(id)
-      .value;
-
-      const proteins = [
-        ["choice_chicken",
-        "Chicken"],
-
-        ["choice_steak",
-        "Steak"],
-
-        ["choice_shrimp",
-        "Shrimp"],
-
-        ["choice_scallops",
-        "Scallops"],
-
-        ["choice_salmon",
-        "Salmon"],
-
-        ["choice_veg",
-        "Veg + Tofu"]
-      ]
-
-      .filter(([id]) =>
-        document
-        .getElementById(id)
-        .checked
-      )
-
-      .map(([,name]) =>
-        name
-      )
-
-      .join(", ");
-
-      document
-      .getElementById(
-        "pdf-name"
-      ).innerText =
-      val("fullName");
-
-      document
-      .getElementById(
-        "pdf-email"
-      ).innerText =
-      val("email");
-
-      document
-      .getElementById(
-        "pdf-phone"
-      ).innerText =
-      val("phone");
-
-      document
-      .getElementById(
-        "pdf-date"
-      ).innerText =
-      val("eventDate");
-
-      document
-      .getElementById(
-        "pdf-address"
-      ).innerText =
-      val("address");
-
-      document
-      .getElementById(
-        "pdf-basic"
-      ).innerText =
-      val("basicAdults");
-
-      document
-      .getElementById(
-        "pdf-deluxe"
-      ).innerText =
-      val("deluxeAdults");
-
-      document
-      .getElementById(
-        "pdf-child"
-      ).innerText =
-      val("childrenCount");
-
-      document
-      .getElementById(
-        "pdf-proteins"
-      ).innerText =
-      proteins || "None";
-
-      document
-      .getElementById(
-        "pdf-requests"
-      ).innerText =
-      val(
-        "specialRequests"
-      ) || "None";
-
-      const params = {
-        from_name:
-        val("fullName"),
-
-        reply_to:
-        val("email"),
-
-        phone_num:
-        val("phone"),
-
-        event_date:
-        val("eventDate"),
-
-        full_address:
-        val("address"),
-
-        count_basic:
-        val("basicAdults"),
-
-        count_deluxe:
-        val("deluxeAdults"),
-
-        count_children:
-        val("childrenCount"),
-
-        proteins:
-        proteins,
-
-        requests:
-        val(
-          "specialRequests"
-        )
-      };
-
-      emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        params
-      )
-
-      .then(() => {
-
-        const pdf =
-        document
-        .getElementById(
-          "pdf-template"
-        );
-
-        pdf.style.display =
-        "block";
-
-        html2pdf()
-        .set({
-          margin: .5,
-
-          filename:
-          "hibachi-booking.pdf",
-
-          html2canvas: {
-            scale: 2
-          },
-
-          jsPDF: {
-            unit: "in",
-            format:
-            "letter",
-            orientation:
-            "portrait"
-          }
-        })
-
-        .from(pdf)
-
-        .save()
-
-        .then(() => {
-
-          pdf.style.display =
-          "none";
-
-          alert(
-            "Booking submitted!"
-          );
-
-          form.reset();
-
-          btn.innerText =
-          "Submit Booking";
-
-          btn.disabled =
-          false;
-        });
-
-      })
-
-      .catch(err => {
-
-        console.error(err);
-
-        alert(
-          "Error submitting booking."
-        );
-
-        btn.innerText =
-        "Submit Booking";
-
-        btn.disabled =
-        false;
-      });
-
-    });
-</script>
-
-</body>
-</html>
+        <div>
+          <label>Start Time *</label>
+          <select id="startTime" required>
+            <option value="">Select time</option>
+            <option>11:30 AM</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+            <option>6:00 PM</option>
+            <option>7:00 PM</option>
+            <option>8:00 PM</option>
+            <option>
