@@ -257,6 +257,47 @@
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
+        .form-grid-checkbox {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fafafa;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+        }
+        .form-side-orders {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .side-order-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fafafa;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+        }
+        .side-order-row label {
+            margin-bottom: 0;
+        }
+        .side-order-row input[type="number"] {
+            width: 70px;
+            padding: 5px;
+            text-align: center;
+        }
         .btn-submit {
             background-color: var(--dark-banner);
             color: var(--gold);
@@ -269,7 +310,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s, transform 0.2s;
-            margin-top: 10px;
+            margin-top: 25px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .btn-submit:hover {
@@ -593,7 +634,7 @@
                     <p class="note-text"><i class="fa-solid fa-tree"></i> Note: We can cook both inside or outside venues, including residential properties, parks, or by the sea!</p>
                 </div>
 
-                <div style="background: var(--gold-light); padding: 20px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #ebdcb9;">
+                <div style="background: var(--gold-light); padding: 20px; border-radius: 5px; margin-bottom: 25px; border: 1px solid #ebdcb9;">
                     <h4 style="color:var(--text-dark); margin-bottom: 15px;"><i class="fa-solid fa-users"></i> Guest Counts & Plans</h4>
                     <div class="form-row">
                         <div class="form-group">
@@ -613,9 +654,58 @@
                     </div>
                 </div>
 
+                <div style="background: #ffffff; padding: 20px; border-radius: 5px; margin-bottom: 25px; border: 1px solid var(--border-color);">
+                    <h4 style="color:var(--text-dark); margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px;"><i class="fa-solid fa-bars"></i> Select Menu Choices For Your Party</h4>
+                    
+                    <div class="form-group">
+                        <label style="color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Protein Choices Wanted:</label>
+                        <div class="form-grid-checkbox">
+                            <div class="checkbox-item"><input type="checkbox" id="choice_chicken" name="menu_chicken" value="Yes"> <label for="choice_chicken">Chicken (Included)</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="choice_steak" name="menu_steak" value="Yes"> <label for="choice_steak">Steak (Included)</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="choice_shrimp" name="menu_shrimp" value="Yes"> <label for="choice_shrimp">Shrimp (Included)</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="choice_scallops" name="menu_scallops" value="Yes"> <label for="choice_scallops">Scallops (Included)</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="choice_salmon" name="menu_salmon" value="Yes"> <label for="choice_salmon">Salmon (Included)</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="choice_veg" name="menu_veg" value="Yes"> <label for="choice_veg">Vegetable (+Tofu)</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="choice_filet" name="menu_filet" value="Yes"> <label for="choice_filet">Filet Mignon (+$5)</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="choice_lobster" name="menu_lobster" value="Yes"> <label for="choice_lobster">Lobster Tail (+$10)</label></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Appetizers (Quantities):</label>
+                        <div class="form-grid-checkbox">
+                            <div class="checkbox-item" style="justify-content: space-between; width: 100%;">
+                                <label for="app_gyoza">Gyoza (6pcs) - $10</label>
+                                <input type="number" id="app_gyoza" name="qty_gyoza" min="0" value="0" style="width:70px; padding:5px; text-align:center;">
+                            </div>
+                            <div class="checkbox-item" style="justify-content: space-between; width: 100%;">
+                                <label for="app_edamame">Edamame - $10</label>
+                                <input type="number" id="app_edamame" name="qty_edamame" min="0" value="0" style="width:70px; padding:5px; text-align:center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Side Orders (Quantities):</label>
+                        <div class="form-side-orders">
+                            <div class="side-order-row"><label for="side_fried_rice">Fried Rice (+$5)</label> <input type="number" id="side_fried_rice" name="side_fried_rice" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_white_rice">White Rice (+$5)</label> <input type="number" id="side_white_rice" name="side_white_rice" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_noodles">Noodles (+$5)</label> <input type="number" id="side_noodles" name="side_noodles" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_chicken">Chicken Side (+$10)</label> <input type="number" id="side_chicken" name="side_chicken" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_steak">Steak Side (+$10)</label> <input type="number" id="side_steak" name="side_steak" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_shrimp">Shrimp Side (+$10)</label> <input type="number" id="side_shrimp" name="side_shrimp" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_scallops">Scallops Side (+$10)</label> <input type="number" id="side_scallops" name="side_scallops" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_salmon">Salmon Side (+$10)</label> <input type="number" id="side_salmon" name="side_salmon" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_veg">Veg (+Tofu) Side (+$10)</label> <input type="number" id="side_veg" name="side_veg" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_filet">Filet Mignon Side (+$15)</label> <input type="number" id="side_filet" name="side_filet" min="0" value="0"></div>
+                            <div class="side-order-row"><label for="side_lobster">Lobster Tail Side (+$15)</label> <input type="number" id="side_lobster" name="side_lobster" min="0" value="0"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
-                    <label for="specialRequests">Special Requests / Preferred Proteins / Allergies</label>
-                    <textarea id="specialRequests" name="special_requests" rows="3" placeholder="List your selected protein choices per guest or any notes..."></textarea>
+                    <label for="specialRequests">Special Requests / Notes / Allergies</label>
+                    <textarea id="specialRequests" name="special_requests" rows="3" placeholder="List any special notes or allergy accommodations here..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-submit" id="submitBtn">Complete & Submit Booking Request</button>
@@ -640,6 +730,9 @@
             <tr><td>Basic Plan Adults ($55)</td><td id="pdf-basic"></td></tr>
             <tr><td>Deluxe Plan Adults ($65)</td><td id="pdf-deluxe"></td></tr>
             <tr><td>Children Amount ($30)</td><td id="pdf-child"></td></tr>
+            <tr><td>Selected Proteins Checklist</td><td id="pdf-proteins"></td></tr>
+            <tr><td>Selected Appetizers</td><td id="pdf-apps"></td></tr>
+            <tr><td>Selected Side Orders</td><td id="pdf-sides"></td></tr>
             <tr><td>Special Requests / Choices</td><td id="pdf-requests"></td></tr>
         </table>
         <p style="margin-top:20px; font-size:11px; color:#666;">* Final quotes incorporating local geographic regional taxes & adjustments will be sent during client confirmation follow-up calls.</p>
@@ -670,48 +763,4 @@
             // Map data items into the template block for generation extraction
             document.getElementById('pdf-name').innerText = document.getElementById('fullName').value;
             document.getElementById('pdf-email').innerText = document.getElementById('email').value;
-            document.getElementById('pdf-phone').innerText = document.getElementById('phone').value;
-            document.getElementById('pdf-date').innerText = document.getElementById('eventDate').value;
-            document.getElementById('pdf-time').innerText = document.getElementById('startTime').value;
-            document.getElementById('pdf-state').innerText = document.getElementById('stateSelect').value;
-            document.getElementById('pdf-address').innerText = document.getElementById('address').value;
-            document.getElementById('pdf-basic').innerText = document.getElementById('basicAdults').value;
-            document.getElementById('pdf-deluxe').innerText = document.getElementById('deluxeAdults').value;
-            document.getElementById('pdf-child').innerText = document.getElementById('childrenCount').value;
-            document.getElementById('pdf-requests').innerText = document.getElementById('specialRequests').value || 'None specified';
-
-            // Send form values securely to EmailJS Dashboard first
-            // CRITICAL STEP: Replace "YOUR_SERVICE_ID" and "YOUR_TEMPLATE_ID" with actual parameters
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', event.target)
-                .then(function() {
-                    
-                    // Trigger the client browser instance to download their PDF summary receipt
-                    const element = document.getElementById('pdf-template');
-                    element.style.display = 'block';
-
-                    const opt = {
-                        margin:       10,
-                        filename:     'Mr_Yami_Booking_Summary.pdf',
-                        image:        { type: 'jpeg', quality: 0.98 },
-                        html2canvas:  { scale: 2, useCORS: true },
-                        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-                    };
-
-                    html2pdf().from(element).set(opt).save().then(function() {
-                        element.style.display = 'none';
-                        
-                        alert('Success! Your booking request has been securely sent. Your summary PDF receipt has been downloaded to your device!');
-                        document.getElementById('hibachiBookingForm').reset();
-                        submitButton.innerText = "Complete & Submit Booking Request";
-                        submitButton.disabled = false;
-                    });
-
-                }, function(error) {
-                    alert('Email dispatch processing failed. Please call our team directly via phone details listed above. Error info: ' + JSON.stringify(error));
-                    submitButton.innerText = "Complete & Submit Booking Request";
-                    submitButton.disabled = false;
-                });
-        });
-    </script>
-</body>
-</html>
+            document.
