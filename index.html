@@ -604,13 +604,13 @@
         </div>
 
         <div>
-          <label>State *</label>
+          <label>DMV Area *</label>
           <select id="stateSelect" required>
-            <option value="">Select state</option>
-            <option value="NY">New York</option>
-            <option value="NJ">New Jersey</option>
+            <option value="">Select area</option>
+            <option value="DC">Washington, DC</option>
+            <option value="MD">Maryland</option>
             <option value="VA">Virginia</option>
-            <option value="Other">Other</option>
+            <option value="Other">Outside DMV</option>
           </select>
         </div>
       </div>
@@ -855,8 +855,8 @@
   const PROPANE_TANK_FEE = 15;
 
   const TAX_RATES = {
-    NY: 0.08875,
-    NJ: 0.06625,
+    DC: 0.06,
+    MD: 0.06,
     VA: 0.06,
     Other: 0
   };
@@ -1087,7 +1087,7 @@
         `Phone: ${val("phone")}`,
         `Event Date: ${val("eventDate")}`,
         `Start Time: ${val("startTime")}`,
-        `State: ${state}`,
+        `DMV Area: ${state}`,
         `Address: ${val("address")}`,
         `Special Requests: ${val("specialRequests") || "None"}`,
         "",
