@@ -181,156 +181,73 @@
   <p> Contact: Tony +18287197700 | Jason +19296881138
 </header>
 
-<section class="hibachi-pricing">
+<section class="pricing-mini">
   <style>
-    .hibachi-pricing {
+    .pricing-mini {
       font-family: Arial, sans-serif;
-      padding: 20px 12px;
+      padding: 12px;
       background: #fff8f2;
     }
 
-    .pricing-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .pricing-card {
-      position: relative;
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 14px;
-      padding: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
-
-    .pricing-card.popular {
-      border: 2px solid #c62828;
-    }
-
-    .badge {
-      position: absolute;
-      top: -10px;
-      right: 12px;
-      background: #c62828;
-      color: #fff;
-      font-size: 10px;
-      font-weight: bold;
-      padding: 4px 8px;
-      border-radius: 999px;
-    }
-
-    .card-top {
+    .plan {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 14px;
       margin-bottom: 10px;
+      border: 1px solid #eee;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
     }
 
-    .card-top h3 {
-      margin: 0;
-      font-size: 18px;
+    .plan.popular {
+      border: 2px solid #c62828;
+    }
+
+    .plan-name {
+      font-size: 15px;
+      font-weight: bold;
       color: #222;
     }
 
+    .protein {
+      font-size: 12px;
+      color: #666;
+      margin-top: 2px;
+    }
+
     .price {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
       color: #c62828;
     }
-
-    .price span {
-      font-size: 11px;
-      color: #666;
-      font-weight: normal;
-      display: block;
-      text-align: right;
-    }
-
-    .features {
-      margin: 0;
-      padding-left: 18px;
-      color: #333;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .sake-banner {
-      margin-top: 14px;
-      background: #111;
-      color: #fff;
-      border-radius: 12px;
-      padding: 12px 14px;
-      font-size: 13px;
-      line-height: 1.4;
-      text-align: center;
-    }
-
-    .sake-banner strong {
-      color: #ffd166;
-    }
   </style>
 
-  <div class="pricing-grid">
-
-    <div class="pricing-card">
-      <div class="card-top">
-        <h3>Basic Adult</h3>
-        <div class="price">
-          $55
-          <span>per person</span>
-        </div>
-      </div>
-
-      <ul class="features">
-        <li>2 Proteins</li>
-        <li>Fried rice & vegetables</li>
-        <li>Fresh salad included</li>
-      </ul>
+  <div class="plan">
+    <div>
+      <div class="plan-name">Basic Adult</div>
+      <div class="protein">2 Proteins</div>
     </div>
-
-    <div class="pricing-card popular">
-      <div class="badge">MOST POPULAR</div>
-
-      <div class="card-top">
-        <h3>Deluxe Adult</h3>
-        <div class="price">
-          $65
-          <span>per person</span>
-        </div>
-      </div>
-
-      <ul class="features">
-        <li>3 Proteins</li>
-        <li>Fried rice & vegetables</li>
-        <li>Fresh salad included</li>
-      </ul>
-    </div>
-
-    <div class="pricing-card">
-      <div class="card-top">
-        <h3>Children</h3>
-        <div class="price">
-          $30
-          <span>per child</span>
-        </div>
-      </div>
-
-      <ul class="features">
-        <li>2 Proteins</li>
-        <li>Fried rice & vegetables</li>
-        <li>Fresh salad included</li>
-      </ul>
-    </div>
-
+    <div class="price">$55</div>
   </div>
 
-  <div class="sake-banner">
-    🍶 <strong>FREE Premium Sake Included</strong><br>
-    Fresh salad included for all guests.
+  <div class="plan popular">
+    <div>
+      <div class="plan-name">Deluxe Adult</div>
+      <div class="protein">3 Proteins</div>
+    </div>
+    <div class="price">$65</div>
+  </div>
+
+  <div class="plan">
+    <div>
+      <div class="plan-name">Children</div>
+      <div class="protein">2 Proteins</div>
+    </div>
+    <div class="price">$30</div>
   </div>
 </section>
-
 
 <div class="container">
 
