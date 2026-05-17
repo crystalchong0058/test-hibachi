@@ -222,4 +222,352 @@
             <option>6:00 PM</option>
             <option>7:00 PM</option>
             <option>8:00 PM</option>
-            <option>
+            <option>9:00 PM</option>
+            <option>10:00 PM</option>
+          </select>
+        </div>
+
+        <div>
+          <label>State *</label>
+          <select id="stateSelect" required>
+            <option value="">Select state</option>
+            <option value="NY">New York</option>
+            <option value="NJ">New Jersey</option>
+            <option value="VA">Virginia</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <br />
+
+      <label>Full Address *</label>
+      <input id="address" required />
+
+      <br /><br />
+
+      <label>Special Requests / Allergies</label>
+      <textarea id="specialRequests" rows="3"></textarea>
+    </div>
+
+    <div class="card">
+      <h2>Guest Count by Plan</h2>
+
+      <div class="row">
+        <div>
+          Basic Adult Plan
+          <div class="note">$55 per person, 2 proteins</div>
+        </div>
+        <input id="basicAdults" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>
+          Deluxe Adult Plan
+          <div class="note">$65 per person, 3 proteins</div>
+        </div>
+        <input id="deluxeAdults" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>
+          Children Plan
+          <div class="note">$30 per person, 2 proteins</div>
+        </div>
+        <input id="childrenCount" type="number" min="0" value="0" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Menu Choices with Counts</h2>
+
+      <h3>Protein Choices</h3>
+
+      <div class="row">
+        <div>Chicken <span class="price">Included</span></div>
+        <input id="proteinChicken" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Steak <span class="price">Included</span></div>
+        <input id="proteinSteak" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Shrimp <span class="price">Included</span></div>
+        <input id="proteinShrimp" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Scallops <span class="price">Included</span></div>
+        <input id="proteinScallops" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Salmon <span class="price">Included</span></div>
+        <input id="proteinSalmon" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Vegetable (+Tofu) <span class="price">Included</span></div>
+        <input id="proteinVeg" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Filet Mignon <span class="price">+$5 upgrade</span></div>
+        <input id="proteinFilet" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Lobster Tail <span class="price">+$10 upgrade</span></div>
+        <input id="proteinLobster" type="number" min="0" value="0" />
+      </div>
+
+      <h3>Appetizers</h3>
+
+      <div class="row">
+        <div>Gyoza (6pcs) <span class="price">$10</span></div>
+        <input id="appGyoza" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Edamame <span class="price">$10</span></div>
+        <input id="appEdamame" type="number" min="0" value="0" />
+      </div>
+
+      <h3>Side Orders</h3>
+
+      <div class="row">
+        <div>Fried Rice <span class="price">+$5</span></div>
+        <input id="sideFriedRice" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>White Rice <span class="price">+$5</span></div>
+        <input id="sideWhiteRice" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Noodles <span class="price">+$5</span></div>
+        <input id="sideNoodles" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Chicken Side <span class="price">+$10</span></div>
+        <input id="sideChicken" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Steak Side <span class="price">+$10</span></div>
+        <input id="sideSteak" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Shrimp Side <span class="price">+$10</span></div>
+        <input id="sideShrimp" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Scallops Side <span class="price">+$10</span></div>
+        <input id="sideScallops" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Salmon Side <span class="price">+$10</span></div>
+        <input id="sideSalmon" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Vegetable (+Tofu) Side <span class="price">+$10</span></div>
+        <input id="sideVeg" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Filet Mignon Side <span class="price">+$15</span></div>
+        <input id="sideFilet" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row">
+        <div>Lobster Tail Side <span class="price">+$15</span></div>
+        <input id="sideLobster" type="number" min="0" value="0" />
+      </div>
+    </div>
+
+    <div class="card summary">
+      <h2>Price Estimate</h2>
+
+      <div class="summary-line">
+        <span>Guest Plans</span>
+        <span id="planSubtotal">$0.00</span>
+      </div>
+
+      <div class="summary-line">
+        <span>Protein Upgrades</span>
+        <span id="proteinSubtotal">$0.00</span>
+      </div>
+
+      <div class="summary-line">
+        <span>Appetizers</span>
+        <span id="appSubtotal">$0.00</span>
+      </div>
+
+      <div class="summary-line">
+        <span>Side Orders</span>
+        <span id="sideSubtotal">$0.00</span>
+      </div>
+
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span id="subtotal">$0.00</span>
+      </div>
+
+      <div class="summary-line">
+        <span>Sales Tax <span id="taxRateText">(0%)</span></span>
+        <span id="taxAmount">$0.00</span>
+      </div>
+
+      <div class="summary-line total">
+        <span>Estimated Total</span>
+        <span id="grandTotal">$0.00</span>
+      </div>
+
+      <div class="summary-line">
+        <span>20% Deposit</span>
+        <span id="deposit">$0.00</span>
+      </div>
+    </div>
+
+    <button type="submit">Submit Booking Request</button>
+
+  </form>
+
+</div>
+
+<footer>
+  © 2026 Mr Yami Hibachi At Home
+</footer>
+
+<script>
+  const TAX_RATES = {
+    NY: 0.08875,
+    NJ: 0.06625,
+    VA: 0.06,
+    Other: 0
+  };
+
+  const money = n =>
+    n.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD"
+    });
+
+  const num = id =>
+    Number(document.getElementById(id).value || 0);
+
+  function calculateTotal() {
+    const state =
+      document.getElementById("stateSelect").value;
+
+    const taxRate =
+      TAX_RATES[state] || 0;
+
+    const planSubtotal =
+      num("basicAdults") * 55 +
+      num("deluxeAdults") * 65 +
+      num("childrenCount") * 30;
+
+    const proteinSubtotal =
+      num("proteinFilet") * 5 +
+      num("proteinLobster") * 10;
+
+    const appSubtotal =
+      num("appGyoza") * 10 +
+      num("appEdamame") * 10;
+
+    const sideSubtotal =
+      num("sideFriedRice") * 5 +
+      num("sideWhiteRice") * 5 +
+      num("sideNoodles") * 5 +
+      num("sideChicken") * 10 +
+      num("sideSteak") * 10 +
+      num("sideShrimp") * 10 +
+      num("sideScallops") * 10 +
+      num("sideSalmon") * 10 +
+      num("sideVeg") * 10 +
+      num("sideFilet") * 15 +
+      num("sideLobster") * 15;
+
+    const subtotal =
+      planSubtotal +
+      proteinSubtotal +
+      appSubtotal +
+      sideSubtotal;
+
+    const tax =
+      subtotal * taxRate;
+
+    const total =
+      subtotal + tax;
+
+    document.getElementById("planSubtotal").textContent =
+      money(planSubtotal);
+
+    document.getElementById("proteinSubtotal").textContent =
+      money(proteinSubtotal);
+
+    document.getElementById("appSubtotal").textContent =
+      money(appSubtotal);
+
+    document.getElementById("sideSubtotal").textContent =
+      money(sideSubtotal);
+
+    document.getElementById("subtotal").textContent =
+      money(subtotal);
+
+    document.getElementById("taxRateText").textContent =
+      `(${(taxRate * 100).toFixed(3)}%)`;
+
+    document.getElementById("taxAmount").textContent =
+      money(tax);
+
+    document.getElementById("grandTotal").textContent =
+      money(total);
+
+    document.getElementById("deposit").textContent =
+      money(total * 0.2);
+  }
+
+  document
+    .querySelectorAll("input, select, textarea")
+    .forEach(el => {
+      el.addEventListener("input", calculateTotal);
+      el.addEventListener("change", calculateTotal);
+    });
+
+  document
+    .getElementById("bookingForm")
+    .addEventListener("submit", e => {
+      e.preventDefault();
+
+      const guests =
+        num("basicAdults") +
+        num("deluxeAdults") +
+        num("childrenCount");
+
+      if (guests <= 0) {
+        alert("Please enter at least one guest.");
+        return;
+      }
+
+      calculateTotal();
+
+      alert(
+        "Booking request submitted. Please connect this form to EmailJS or your backend to send the details."
+      );
+    });
+
+  calculateTotal();
+</script>
+
+</body>
+</html>
