@@ -181,170 +181,156 @@
   <p> Contact: Tony +18287197700 | Jason +19296881138
 </header>
 
-<section class="pricing-section">
+<section class="hibachi-pricing">
   <style>
-    .pricing-section {
+    .hibachi-pricing {
       font-family: Arial, sans-serif;
-      padding: 50px 20px;
-      background: #fff8f0;
-      text-align: center;
+      padding: 20px 12px;
+      background: #fff8f2;
     }
 
-    .pricing-title {
-      font-size: 32px;
-      margin-bottom: 30px;
-      color: #222;
-    }
-
-    .pricing-cards {
+    .pricing-grid {
       display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .pricing-card {
       position: relative;
       background: #fff;
-      border-radius: 18px;
-      padding: 30px 25px;
-      width: 280px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-      border: 2px solid #f2d2a9;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
     .pricing-card.popular {
-      border-color: #c62828;
-      transform: scale(1.03);
+      border: 2px solid #c62828;
     }
 
     .badge {
       position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: -10px;
+      right: 12px;
       background: #c62828;
       color: #fff;
-      font-size: 13px;
+      font-size: 10px;
       font-weight: bold;
-      padding: 7px 16px;
+      padding: 4px 8px;
       border-radius: 999px;
-      letter-spacing: 0.5px;
     }
 
-    .pricing-card h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .card-top h3 {
+      margin: 0;
+      font-size: 18px;
       color: #222;
     }
 
     .price {
-      font-size: 42px;
+      font-size: 24px;
       font-weight: bold;
       color: #c62828;
-      margin: 10px 0;
     }
 
     .price span {
-      display: block;
-      font-size: 15px;
+      font-size: 11px;
+      color: #666;
       font-weight: normal;
-      color: #555;
-      margin-top: 4px;
+      display: block;
+      text-align: right;
     }
 
     .features {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0 0;
-    }
-
-    .features li {
-      padding: 9px 0;
+      margin: 0;
+      padding-left: 18px;
       color: #333;
-      border-bottom: 1px solid #eee;
-      font-size: 16px;
-    }
-
-    .features li:last-child {
-      border-bottom: none;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .sake-banner {
-      margin: 35px auto 0;
-      max-width: 850px;
+      margin-top: 14px;
       background: #111;
       color: #fff;
-      padding: 22px 26px;
-      border-radius: 16px;
-      font-size: 18px;
-      line-height: 1.5;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
     }
 
     .sake-banner strong {
       color: #ffd166;
     }
-
-    @media (max-width: 768px) {
-      .pricing-card.popular {
-        transform: none;
-      }
-
-      .pricing-title {
-        font-size: 28px;
-      }
-    }
   </style>
 
-  <h2 class="pricing-title">Hibachi Packages</h2>
+  <div class="pricing-grid">
 
-  <div class="pricing-cards">
     <div class="pricing-card">
-      <h3>Basic Adult</h3>
-      <div class="price">
-        $55
-        <span>per person</span>
+      <div class="card-top">
+        <h3>Basic Adult</h3>
+        <div class="price">
+          $55
+          <span>per person</span>
+        </div>
       </div>
+
       <ul class="features">
-        <li>2 Proteins per person</li>
-        <li>Fried rice &amp; vegetables</li>
+        <li>2 Proteins</li>
+        <li>Fried rice & vegetables</li>
         <li>Fresh salad included</li>
       </ul>
     </div>
 
     <div class="pricing-card popular">
       <div class="badge">MOST POPULAR</div>
-      <h3>Deluxe Adult</h3>
-      <div class="price">
-        $65
-        <span>per person</span>
+
+      <div class="card-top">
+        <h3>Deluxe Adult</h3>
+        <div class="price">
+          $65
+          <span>per person</span>
+        </div>
       </div>
+
       <ul class="features">
-        <li>3 Proteins per person</li>
-        <li>Fried rice &amp; vegetables</li>
+        <li>3 Proteins</li>
+        <li>Fried rice & vegetables</li>
         <li>Fresh salad included</li>
       </ul>
     </div>
 
     <div class="pricing-card">
-      <h3>Children</h3>
-      <div class="price">
-        $30
-        <span>per child</span>
+      <div class="card-top">
+        <h3>Children</h3>
+        <div class="price">
+          $30
+          <span>per child</span>
+        </div>
       </div>
+
       <ul class="features">
-        <li>2 Proteins per person</li>
-        <li>Fried rice &amp; vegetables</li>
+        <li>2 Proteins</li>
+        <li>Fried rice & vegetables</li>
         <li>Fresh salad included</li>
       </ul>
     </div>
+
   </div>
 
   <div class="sake-banner">
-    🍶 <strong>FREE Premium Sake Included</strong> —
-    Premium sake at no extra cost. Fresh salad included for all guests.
+    🍶 <strong>FREE Premium Sake Included</strong><br>
+    Fresh salad included for all guests.
   </div>
 </section>
+
 
 <div class="container">
 
