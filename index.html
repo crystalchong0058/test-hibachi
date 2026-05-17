@@ -356,48 +356,48 @@
   </div>
 </section>
 
-<section class="menu-section">
+<section class="menu-compact">
   <style>
-    .menu-section {
+    .menu-compact {
       font-family: Arial, sans-serif;
-      padding: 20px 14px;
+      padding: 12px;
       background: #fff8f2;
       color: #222;
     }
 
-    .menu-title {
+    .menu-compact h2 {
       text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 18px;
+      font-size: 20px;
+      margin: 0 0 10px;
     }
 
-    .menu-group {
+    .menu-box {
       background: #fff;
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 14px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
     }
 
-    .menu-group h3 {
-      margin: 0 0 12px;
-      font-size: 16px;
+    .menu-box h3 {
+      margin: 0 0 6px;
+      font-size: 13px;
       color: #c62828;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 6px;
+      letter-spacing: 0.5px;
     }
 
-    .menu-item {
+    .menu-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 7px 0;
-      font-size: 14px;
+      gap: 10px;
+      padding: 4px 0;
+      font-size: 13px;
+      line-height: 1.25;
       border-bottom: 1px solid #f3f3f3;
     }
 
-    .menu-item:last-child {
+    .menu-row:last-child {
       border-bottom: none;
     }
 
@@ -405,131 +405,65 @@
       color: #c62828;
       font-weight: bold;
       white-space: nowrap;
-      margin-left: 10px;
+      font-size: 13px;
     }
 
     .upgrade {
-      font-size: 12px;
       color: #777;
-      margin-left: 4px;
+      font-size: 11px;
+      margin-left: 3px;
     }
   </style>
 
-  <div class="menu-title">Menu</div>
+  <h2>Menu</h2>
 
-  <div class="menu-group">
+  <div class="menu-box">
     <h3>PROTEIN CHOICES</h3>
 
-    <div class="menu-item">
-      <span>Chicken</span>
+    <div class="menu-row"><span>Chicken</span></div>
+    <div class="menu-row"><span>Steak</span></div>
+    <div class="menu-row"><span>Shrimp</span></div>
+    <div class="menu-row"><span>Scallops</span></div>
+    <div class="menu-row"><span>Salmon</span></div>
+    <div class="menu-row"><span>Vegetable (+Tofu)</span></div>
+
+    <div class="menu-row">
+      <span>Filet Mignon <span class="upgrade">+$5</span></span>
     </div>
 
-    <div class="menu-item">
-      <span>Steak</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Shrimp</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Scallops</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Salmon</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Vegetable (+Tofu)</span>
-    </div>
-
-    <div class="menu-item">
-      <span>
-        Filet Mignon
-        <span class="upgrade">+$5 upgrade</span>
-      </span>
-    </div>
-
-    <div class="menu-item">
-      <span>
-        Lobster Tail
-        <span class="upgrade">+$10 upgrade</span>
-      </span>
+    <div class="menu-row">
+      <span>Lobster Tail <span class="upgrade">+$10</span></span>
     </div>
   </div>
 
-  <div class="menu-group">
+  <div class="menu-box">
     <h3>APPETIZERS</h3>
 
-    <div class="menu-item">
+    <div class="menu-row">
       <span>Gyoza (6pcs)</span>
       <span class="price">$10</span>
     </div>
 
-    <div class="menu-item">
+    <div class="menu-row">
       <span>Edamame</span>
       <span class="price">$10</span>
     </div>
   </div>
 
-  <div class="menu-group">
+  <div class="menu-box">
     <h3>SIDE ORDERS</h3>
 
-    <div class="menu-item">
-      <span>Fried Rice</span>
-      <span class="price">+$5</span>
-    </div>
-
-    <div class="menu-item">
-      <span>White Rice</span>
-      <span class="price">+$5</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Noodles</span>
-      <span class="price">+$5</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Chicken Side</span>
-      <span class="price">+$10</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Steak Side</span>
-      <span class="price">+$10</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Shrimp Side</span>
-      <span class="price">+$10</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Scallops Side</span>
-      <span class="price">+$10</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Salmon Side</span>
-      <span class="price">+$10</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Vegetable (+Tofu) Side</span>
-      <span class="price">+$10</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Filet Mignon Side</span>
-      <span class="price">+$15</span>
-    </div>
-
-    <div class="menu-item">
-      <span>Lobster Tail Side</span>
-      <span class="price">+$15</span>
-    </div>
+    <div class="menu-row"><span>Fried Rice</span><span class="price">+$5</span></div>
+    <div class="menu-row"><span>White Rice</span><span class="price">+$5</span></div>
+    <div class="menu-row"><span>Noodles</span><span class="price">+$5</span></div>
+    <div class="menu-row"><span>Chicken Side</span><span class="price">+$10</span></div>
+    <div class="menu-row"><span>Steak Side</span><span class="price">+$10</span></div>
+    <div class="menu-row"><span>Shrimp Side</span><span class="price">+$10</span></div>
+    <div class="menu-row"><span>Scallops Side</span><span class="price">+$10</span></div>
+    <div class="menu-row"><span>Salmon Side</span><span class="price">+$10</span></div>
+    <div class="menu-row"><span>Vegetable (+Tofu) Side</span><span class="price">+$10</span></div>
+    <div class="menu-row"><span>Filet Mignon Side</span><span class="price">+$15</span></div>
+    <div class="menu-row"><span>Lobster Tail Side</span><span class="price">+$15</span></div>
   </div>
 </section>
 
