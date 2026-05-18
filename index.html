@@ -159,6 +159,26 @@
       font-weight: 600;
     }
 
+    .protein-limit-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: -8px 0 12px;
+    }
+
+    .protein-limit-note.warning {
+      color: #c62828;
+      font-weight: 600;
+    }
+
+    .protein-row.protein-greyed {
+      opacity: 0.45;
+    }
+
+    .protein-row.protein-greyed input {
+      background: #e8e8e8;
+      cursor: not-allowed;
+    }
+
     button {
       width: 100%;
       padding: 15px;
@@ -657,46 +677,92 @@
     <div class="card">
       <h2>Menu Choices with Counts</h2>
 
-      <h3>Protein Choices</h3>
+      <h3>Adult Protein Choices</h3>
+      <p class="note" style="margin: -6px 0 10px;">Basic: 2 per person · Deluxe: 3 per person</p>
+      <p id="proteinLimitNoteAdult" class="protein-limit-note">0 of 0 proteins selected</p>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Chicken <span class="price">Included</span></div>
         <input id="proteinChicken" type="number" min="0" value="0" />
       </div>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Steak <span class="price">Included</span></div>
         <input id="proteinSteak" type="number" min="0" value="0" />
       </div>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Shrimp <span class="price">Included</span></div>
         <input id="proteinShrimp" type="number" min="0" value="0" />
       </div>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Scallops <span class="price">Included</span></div>
         <input id="proteinScallops" type="number" min="0" value="0" />
       </div>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Salmon <span class="price">Included</span></div>
         <input id="proteinSalmon" type="number" min="0" value="0" />
       </div>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Vegetable (+Tofu) <span class="price">Included</span></div>
         <input id="proteinVeg" type="number" min="0" value="0" />
       </div>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Filet Mignon <span class="price">+$5 upgrade</span></div>
         <input id="proteinFilet" type="number" min="0" value="0" />
       </div>
 
-      <div class="row">
+      <div class="row protein-row">
         <div>Lobster Tail <span class="price">+$10 upgrade</span></div>
         <input id="proteinLobster" type="number" min="0" value="0" />
+      </div>
+
+      <h3 style="margin-top: 24px;">Children Protein Choices</h3>
+      <p class="note" style="margin: -6px 0 10px;">2 proteins per child</p>
+      <p id="proteinLimitNoteChild" class="protein-limit-note">0 of 0 proteins selected</p>
+
+      <div class="row protein-row">
+        <div>Chicken <span class="price">Included</span></div>
+        <input id="childProteinChicken" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row protein-row">
+        <div>Steak <span class="price">Included</span></div>
+        <input id="childProteinSteak" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row protein-row">
+        <div>Shrimp <span class="price">Included</span></div>
+        <input id="childProteinShrimp" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row protein-row">
+        <div>Scallops <span class="price">Included</span></div>
+        <input id="childProteinScallops" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row protein-row">
+        <div>Salmon <span class="price">Included</span></div>
+        <input id="childProteinSalmon" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row protein-row">
+        <div>Vegetable (+Tofu) <span class="price">Included</span></div>
+        <input id="childProteinVeg" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row protein-row">
+        <div>Filet Mignon <span class="price">+$5 upgrade</span></div>
+        <input id="childProteinFilet" type="number" min="0" value="0" />
+      </div>
+
+      <div class="row protein-row">
+        <div>Lobster Tail <span class="price">+$10 upgrade</span></div>
+        <input id="childProteinLobster" type="number" min="0" value="0" />
       </div>
 
       <h3>Appetizers</h3>
@@ -878,6 +944,100 @@
     );
   }
 
+  const ADULT_PROTEIN_IDS = [
+    "proteinChicken",
+    "proteinSteak",
+    "proteinShrimp",
+    "proteinScallops",
+    "proteinSalmon",
+    "proteinVeg",
+    "proteinFilet",
+    "proteinLobster"
+  ];
+
+  const CHILD_PROTEIN_IDS = [
+    "childProteinChicken",
+    "childProteinSteak",
+    "childProteinShrimp",
+    "childProteinScallops",
+    "childProteinSalmon",
+    "childProteinVeg",
+    "childProteinFilet",
+    "childProteinLobster"
+  ];
+
+  function proteinTotal(ids) {
+    return ids.reduce((sum, id) => sum + num(id), 0);
+  }
+
+  function maxAdultProteinAllowed() {
+    return num("basicAdults") * 2 + num("deluxeAdults") * 3;
+  }
+
+  function maxChildProteinAllowed() {
+    return num("childrenCount") * 2;
+  }
+
+  function proteinUpgradeSubtotal() {
+    return (
+      num("proteinFilet") * 5 +
+      num("proteinLobster") * 10 +
+      num("childProteinFilet") * 5 +
+      num("childProteinLobster") * 10
+    );
+  }
+
+  function updateProteinSection(ids, max, note, emptyMessage) {
+    const total = proteinTotal(ids);
+    const over = total > max;
+    const atMax = total >= max && max > 0;
+
+    if (max === 0) {
+      note.textContent = emptyMessage;
+      note.classList.remove("warning");
+    } else if (over) {
+      note.textContent =
+        `Too many selected (${total} of ${max} allowed). Please reduce your selections.`;
+      note.classList.add("warning");
+    } else {
+      note.textContent = `${total} of ${max} proteins selected`;
+      note.classList.remove("warning");
+    }
+
+    ids.forEach(id => {
+      const input = document.getElementById(id);
+      const row = input.closest(".protein-row");
+      const value = num(id);
+      const greyed =
+        max === 0 || (atMax && value === 0) || (over && value === 0);
+
+      row.classList.toggle("protein-greyed", greyed);
+      input.disabled = greyed;
+    });
+  }
+
+  function updateProteinLimits() {
+    updateProteinSection(
+      ADULT_PROTEIN_IDS,
+      maxAdultProteinAllowed(),
+      document.getElementById("proteinLimitNoteAdult"),
+      "Enter adult guest counts above to select proteins."
+    );
+    updateProteinSection(
+      CHILD_PROTEIN_IDS,
+      maxChildProteinAllowed(),
+      document.getElementById("proteinLimitNoteChild"),
+      "Enter children guest counts above to select proteins."
+    );
+  }
+
+  function proteinsValid() {
+    return (
+      proteinTotal(ADULT_PROTEIN_IDS) <= maxAdultProteinAllowed() &&
+      proteinTotal(CHILD_PROTEIN_IDS) <= maxChildProteinAllowed()
+    );
+  }
+
   function suggestedGratuity(billTotal) {
     return {
       g20: money(billTotal * 0.2),
@@ -898,9 +1058,7 @@
       num("deluxeAdults") * 65 +
       num("childrenCount") * 30;
 
-    const proteinSubtotal =
-      num("proteinFilet") * 5 +
-      num("proteinLobster") * 10;
+    const proteinSubtotal = proteinUpgradeSubtotal();
 
     const appSubtotal =
       num("appGyoza") * 10 +
@@ -924,7 +1082,6 @@
 
     const subtotal =
       planSubtotal +
-      proteinSubtotal +
       appSubtotal +
       sideSubtotal +
       propaneFee;
@@ -975,6 +1132,8 @@
 
     document.getElementById("gratuity30").textContent =
       gratuity.g30;
+
+    updateProteinLimits();
   }
 
   document
@@ -997,9 +1156,7 @@
       num("deluxeAdults") * 65 +
       num("childrenCount") * 30;
 
-    const proteinSubtotal =
-      num("proteinFilet") * 5 +
-      num("proteinLobster") * 10;
+    const proteinSubtotal = proteinUpgradeSubtotal();
 
     const appSubtotal =
       num("appGyoza") * 10 +
@@ -1023,7 +1180,6 @@
 
     const subtotal =
       planSubtotal +
-      proteinSubtotal +
       appSubtotal +
       sideSubtotal +
       propaneFee;
@@ -1054,6 +1210,14 @@
       protein_veg: String(num("proteinVeg")),
       protein_filet: String(num("proteinFilet")),
       protein_lobster: String(num("proteinLobster")),
+      child_protein_chicken: String(num("childProteinChicken")),
+      child_protein_steak: String(num("childProteinSteak")),
+      child_protein_shrimp: String(num("childProteinShrimp")),
+      child_protein_scallops: String(num("childProteinScallops")),
+      child_protein_salmon: String(num("childProteinSalmon")),
+      child_protein_veg: String(num("childProteinVeg")),
+      child_protein_filet: String(num("childProteinFilet")),
+      child_protein_lobster: String(num("childProteinLobster")),
       app_gyoza: String(num("appGyoza")),
       app_edamame: String(num("appEdamame")),
       side_fried_rice: String(num("sideFriedRice")),
@@ -1096,7 +1260,7 @@
         `Deluxe Adults: ${num("deluxeAdults")}`,
         `Children: ${num("childrenCount")}`,
         "",
-        "PROTEINS",
+        "ADULT PROTEINS",
         `Chicken: ${num("proteinChicken")}`,
         `Steak: ${num("proteinSteak")}`,
         `Shrimp: ${num("proteinShrimp")}`,
@@ -1105,6 +1269,16 @@
         `Vegetable (+Tofu): ${num("proteinVeg")}`,
         `Filet Mignon: ${num("proteinFilet")}`,
         `Lobster Tail: ${num("proteinLobster")}`,
+        "",
+        "CHILDREN PROTEINS",
+        `Chicken: ${num("childProteinChicken")}`,
+        `Steak: ${num("childProteinSteak")}`,
+        `Shrimp: ${num("childProteinShrimp")}`,
+        `Scallops: ${num("childProteinScallops")}`,
+        `Salmon: ${num("childProteinSalmon")}`,
+        `Vegetable (+Tofu): ${num("childProteinVeg")}`,
+        `Filet Mignon: ${num("childProteinFilet")}`,
+        `Lobster Tail: ${num("childProteinLobster")}`,
         "",
         "APPETIZERS",
         `Gyoza: ${num("appGyoza")}`,
@@ -1159,6 +1333,13 @@
 
       calculateTotal();
 
+      if (!proteinsValid()) {
+        alert(
+          "Protein selections exceed your guest plan allowance. Please adjust adult or children protein counts."
+        );
+        return;
+      }
+
       const submitBtn = document.getElementById("submitBtn");
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
@@ -1187,6 +1368,7 @@
     });
 
   calculateTotal();
+  updateProteinLimits();
 </script>
 
 </body>
