@@ -192,11 +192,115 @@
       margin-top: 20px;
     }
 
+    .contact-promo {
+      background: linear-gradient(180deg, #1a0a0a 0%, #3d1218 45%, #5c1a24 100%);
+      padding: 48px 20px 56px;
+      text-align: center;
+    }
+
+    .contact-promo-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .contact-promo h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--gold);
+      border: none;
+      padding: 0;
+      margin-bottom: 8px;
+      font-size: 1.75rem;
+    }
+
+    .contact-promo .contact-tagline {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .contact-card-frame {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 560px;
+      border-radius: 16px;
+      padding: 6px;
+      background: linear-gradient(145deg, #c39b50 0%, #8b6914 35%, #5c1a24 100%);
+      box-shadow:
+        0 0 0 1px rgba(195, 155, 80, 0.35),
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(198, 40, 40, 0.15);
+    }
+
+    .contact-card-frame::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255, 180, 80, 0.2), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .contact-card-frame img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      vertical-align: middle;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      margin-top: 28px;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(195, 155, 80, 0.45);
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .contact-links a:hover {
+      background: rgba(195, 155, 80, 0.2);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .contact-links a svg {
+      flex-shrink: 0;
+      opacity: 0.9;
+    }
+
+    .contact-slogan {
+      margin-top: 24px;
+      color: var(--gold);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
     footer {
       background: var(--dark);
       color: #aaa;
       text-align: center;
       padding: 25px;
+      border-top: 3px solid #5c1a24;
     }
 
     @media(max-width: 700px) {
@@ -624,13 +728,24 @@
         </div>
 
         <div>
-          <label>DMV Area *</label>
+          <label>Service Area *</label>
           <select id="stateSelect" required>
             <option value="">Select area</option>
             <option value="DC">Washington, DC</option>
             <option value="MD">Maryland</option>
             <option value="VA">Virginia</option>
-            <option value="Other">Outside DMV</option>
+            <option value="ATL_GA">Atlanta, Georgia</option>
+            <option value="FL">Florida</option>
+            <option value="PHL_PA">Philadelphia, Pennsylvania</option>
+            <option value="NC">North Carolina</option>
+            <option value="SC">South Carolina</option>
+            <option value="AZ">Arizona</option>
+            <option value="PHX_AZ">Phoenix, Arizona</option>
+            <option value="OH">Ohio</option>
+            <option value="CHI_IL">Chicago, Illinois</option>
+            <option value="MI">Michigan</option>
+            <option value="WI">Wisconsin</option>
+            <option value="Other">Other / Outside listed areas</option>
           </select>
         </div>
       </div>
@@ -907,8 +1022,42 @@
   ** Once you receive the email confirmation, please follow the link provided in the email to submit your deposit. We accept PayPal, Venmo, and Zelle.</p>
 </div>
 
+<section class="contact-promo" aria-label="Contact us">
+  <div class="contact-promo-inner">
+    <h2>Get In Touch</h2>
+    <p class="contact-tagline">Scan the code or reach out — we’d love to hear from you</p>
+
+    <div class="contact-card-frame">
+      <img
+        src="assets/contact-card.png"
+        alt="4U Sake Hibachi — contact card with phone, email, TikTok, and QR code"
+        width="560"
+        height="auto"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="contact-links">
+      <a href="tel:+19296881138">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        929-688-1138
+      </a>
+      <a href="mailto:jason914hc@gmail.com">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        jason914hc@gmail.com
+      </a>
+      <a href="https://www.tiktok.com/@jasonhuang4u888" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+        @jasonhuang4u888
+      </a>
+    </div>
+
+    <p class="contact-slogan">Remember — more sake, more happy!</p>
+  </div>
+</section>
+
 <footer>
-  © 2026 4U Sake Hibachi At Home - Providing private hibachi catering services to the DMV area!
+  © 2026 4U Sake Hibachi At Home — Private hibachi catering across the DMV and beyond
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -920,10 +1069,38 @@
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
   const PROPANE_TANK_FEE = 15;
 
-  const TAX_RATES = {
+  // State-level sales tax rates (Tax Foundation, 2025–2026). Local taxes not included.
+  const STATE_TAX_RATES = {
     DC: 0.06,
     MD: 0.06,
-    VA: 0.06,
+    VA: 0.053,
+    GA: 0.04,
+    FL: 0.06,
+    PA: 0.06,
+    NC: 0.0475,
+    SC: 0.06,
+    AZ: 0.056,
+    OH: 0.0575,
+    IL: 0.0625,
+    MI: 0.06,
+    WI: 0.05
+  };
+
+  const TAX_RATES = {
+    DC: STATE_TAX_RATES.DC,
+    MD: STATE_TAX_RATES.MD,
+    VA: STATE_TAX_RATES.VA,
+    ATL_GA: STATE_TAX_RATES.GA,
+    FL: STATE_TAX_RATES.FL,
+    PHL_PA: STATE_TAX_RATES.PA,
+    NC: STATE_TAX_RATES.NC,
+    SC: STATE_TAX_RATES.SC,
+    AZ: STATE_TAX_RATES.AZ,
+    PHX_AZ: STATE_TAX_RATES.AZ,
+    OH: STATE_TAX_RATES.OH,
+    CHI_IL: STATE_TAX_RATES.IL,
+    MI: STATE_TAX_RATES.MI,
+    WI: STATE_TAX_RATES.WI,
     Other: 0
   };
 
@@ -1251,7 +1428,7 @@
         `Phone: ${val("phone")}`,
         `Event Date: ${val("eventDate")}`,
         `Start Time: ${val("startTime")}`,
-        `DMV Area: ${state}`,
+        `Service Area: ${state}`,
         `Address: ${val("address")}`,
         `Special Requests: ${val("specialRequests") || "None"}`,
         "",
