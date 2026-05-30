@@ -360,6 +360,49 @@
   }
 </style>
 
+<section class="hero-youtube" aria-label="Featured video">
+  <style>
+    .hero-youtube {
+      background: #000;
+      padding: 110px 16px 20px;
+    }
+
+    .hero-youtube-inner {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto;
+      aspect-ratio: 9 / 16;
+    }
+
+    .hero-youtube-inner iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero-youtube {
+        padding-top: 95px;
+      }
+
+      .hero-youtube-inner {
+        max-width: 220px;
+      }
+    }
+  </style>
+
+  <div class="hero-youtube-inner">
+    <iframe
+      src="https://www.youtube.com/embed/t-phzrgyXqU?autoplay=1&mute=1&loop=1&playlist=t-phzrgyXqU&controls=1&rel=0&playsinline=1"
+      title="4U Sake Hibachi featured video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>
+
 <header class="hero-header">
   <style>
     .hero-header {
@@ -409,8 +452,15 @@
       line-height: 1.4;
     }
 
+    .hero-logo {
+      display: block;
+      width: min(280px, 70vw);
+      margin: 0 auto 16px;
+      border-radius: 8px;
+    }
+
     .hero-header h1.banner-title {
-      margin-top: 2.8em;
+      margin-top: 0;
     }
 
     .hero-header p {
@@ -476,6 +526,11 @@
   <div class="hero-overlay" aria-hidden="true"></div>
 
   <div class="hero-content">
+  <img
+    class="hero-logo"
+    src="assets/ChatGPT Image May 30, 2026 at 01_04_00 AM.png"
+    alt="Mount Fuji with cherry blossoms"
+  />
   <h1 class="banner-title"><b>4U Sake Hibachi</b></h1>
 
   <p>Premium Private Hibachi Catering - Providing services to the DMV area (Primary Coverage Area), East Coast Arizona and more! </p>
@@ -732,6 +787,191 @@
     <div class="menu-row"><span>Filet Mignon Side</span><span class="price">+$15</span></div>
     <div class="menu-row"><span>Lobster Tail Side</span><span class="price">+$15</span></div>
   </div>
+</section>
+
+<section class="setup-guide" id="setup-guide" aria-label="Pre-event setup guide">
+  <style>
+    .setup-guide {
+      font-family: Arial, sans-serif;
+      padding: 20px 14px 24px;
+      background: #fff8f2;
+      color: #222;
+    }
+
+    .setup-guide h2 {
+      text-align: center;
+      font-size: 22px;
+      margin: 0 0 8px;
+      font-family: "Playfair Display", serif;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .setup-guide .setup-intro {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      max-width: 640px;
+      margin: 0 auto 20px;
+      line-height: 1.55;
+    }
+
+    .setup-guide .setup-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 1px solid #eee;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .setup-guide .setup-box h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #c62828;
+      letter-spacing: 0.3px;
+      text-transform: none;
+    }
+
+    .setup-guide .setup-box p,
+    .setup-guide .setup-box li {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #444;
+    }
+
+    .setup-guide .setup-box ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .setup-guide .setup-box li + li {
+      margin-top: 6px;
+    }
+
+    .setup-guide .setup-image-wrap {
+      margin: 12px 0 14px;
+      text-align: center;
+    }
+
+    .setup-guide .setup-image-wrap img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .setup-guide .setup-image-caption {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .setup-guide .setup-checklist {
+      display: grid;
+      gap: 8px;
+    }
+
+    .setup-guide .setup-checklist li {
+      list-style: none;
+      padding-left: 0;
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .setup-guide .setup-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #c62828;
+      font-weight: bold;
+    }
+
+    .setup-guide .setup-note {
+      margin-top: 14px;
+      background: #111;
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .setup-guide .setup-note strong {
+      color: #ffd166;
+    }
+  </style>
+
+  <h2>Before the Chef Arrives</h2>
+  <p class="setup-intro">
+    A little preparation goes a long way. Follow this guide so your chef can set up quickly and your guests can enjoy the full hibachi experience.
+  </p>
+
+  <div class="setup-box">
+    <h3>Table &amp; Seating Setup</h3>
+    <p>
+      Set up one long, sturdy table where everyone can sit facing the chef. Place chairs along both sides so guests look toward the center cooking area. Leave open space at the ends of the table for the chef to work safely.
+    </p>
+    <div class="setup-image-wrap">
+      <img
+        src="assets/howtosetup.jpeg"
+        alt="Recommended hibachi table and seating arrangement for at-home service"
+        loading="lazy"
+      />
+      <p class="setup-image-caption">Example table layout — guests seated on both sides, open space for the chef at the center.</p>
+    </div>
+    <ul>
+      <li>Use a flat, stable surface outdoors or in a well-ventilated area (patio, backyard, garage with doors open).</li>
+      <li>Allow at least 6–8 feet of length for groups of 8–10 guests; add table length or extra tables for larger parties.</li>
+      <li>Keep the area around the table clear of clutter, decorations, and low-hanging items.</li>
+      <li>If rain is possible, have a covered backup spot ready (patio cover, tent, or garage).</li>
+    </ul>
+  </div>
+
+  <div class="setup-box">
+    <h3>What to Have Ready</h3>
+    <ul class="setup-checklist">
+      <li>Plates, napkins, and utensils for every guest</li>
+      <li>Drinking glasses and any non-alcoholic beverages you plan to serve</li>
+      <li>A trash can or trash bags within easy reach</li>
+      <li>Access to an outdoor hose or nearby sink for cleanup</li>
+      <li>Close parking or loading access so the chef can bring equipment to your setup area</li>
+      <li>An outdoor electrical outlet nearby, if available</li>
+    </ul>
+    <p style="margin-top: 12px;">
+      Our chef brings the hibachi grill, fresh ingredients, premium sake, and salad. You provide the table, seating, and place settings.
+    </p>
+  </div>
+
+  <div class="setup-box">
+    <h3>Before the Chef Arrives</h3>
+    <ul>
+      <li>Confirm your final guest count and menu selections at least 24 hours before your event.</li>
+      <li>Submit your deposit using the link in your confirmation email (PayPal, Venmo, or Zelle).</li>
+      <li>Clear the setup area of furniture, toys, and anything blocking the chef’s workspace.</li>
+      <li>Secure pets away from the cooking area for everyone’s safety.</li>
+      <li>Make sure an adult (18+) is home to greet the chef and show them where to set up.</li>
+      <li>Share any allergies or dietary restrictions in advance — or remind the chef on arrival.</li>
+      <li>Have your phone nearby in case the chef needs to reach you on the way.</li>
+    </ul>
+  </div>
+
+  <div class="setup-box">
+    <h3>Important Preparation Requirements</h3>
+    <ul>
+      <li><strong>Outdoor or ventilated space required.</strong> Hibachi cooking uses an open flame and needs fresh air.</li>
+      <li><strong>Keep flammable items away</strong> from the grill area, including paper decorations, tablecloths that hang low, and overhanging branches.</li>
+      <li><strong>Supervise children</strong> and keep them at a safe distance from the grill during cooking.</li>
+      <li><strong>Weather plan:</strong> If conditions are unsafe (heavy rain, high winds), contact us to discuss rescheduling.</li>
+      <li><strong>Minimum space:</strong> Allow roughly 3–4 feet behind the chef for equipment and safe movement.</li>
+    </ul>
+  </div>
+
+  <p class="setup-note">
+    <strong>Questions before your event?</strong> Call Tony at <a href="tel:+18287197700" style="color: #ffd166;">(828) 719-7700</a> or Jason at <a href="tel:+19296881138" style="color: #ffd166;">(929) 688-1138</a> — we’re happy to walk you through setup.
+  </p>
 </section>
 
 <div class="container">
