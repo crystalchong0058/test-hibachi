@@ -1676,6 +1676,15 @@ if (total < 550) {
     const deposit = total * 0.2;
     const gratuity = suggestedGratuity(total);
 
+const totalWith20 =
+  total * 1.20;
+
+const totalWith25 =
+  total * 1.25;
+
+const totalWith30 =
+  total * 1.30;
+  
     return {
       from_name: val("fullName"),
       reply_to: val("email"),
@@ -1731,6 +1740,9 @@ if (total < 550) {
       gratuity_20: gratuity.g20,
       gratuity_25: gratuity.g25,
       gratuity_30: gratuity.g30,
+      grand_total_with_20_gratuity:money(totalWith20),
+grand_total_with_25_gratuity:money(totalWith25),
+grand_total_with_30_gratuity:money(totalWith30),
       booking_details: [
         "CONTACT",
         `Name: ${val("fullName")}`,
