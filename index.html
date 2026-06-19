@@ -85,7 +85,21 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 18px;
     }
+.minimum-warning {
+  display: none;
+  color: #c62828;
+  font-weight: 700;
+  margin-top: 12px;
+  padding: 10px;
+  border-left: 4px solid #c62828;
+  background: #fff0f0;
+}
 
+.submit-disabled {
+  opacity: 0.45;
+  filter: blur(1px);
+  cursor: not-allowed;
+}
     label {
       display: block;
       font-weight: 600;
@@ -1288,8 +1302,13 @@ We bring the flavor.You enjoy the moment.
         </div>
       </div>
     </div>
+<p id="minimumOrderWarning" class="minimum-warning">
+  Not order minimum. Minimum order is $550.
+</p>
 
-    <button type="submit" id="submitBtn">Submit Booking Request</button>
+<button type="submit" id="submitBtn">
+  Submit Booking Request
+</button>
 
   </form>
 <p>  
@@ -1545,6 +1564,21 @@ At 4U Sake Hibachi, we believe the best meals aren't just eaten, they’re exper
     const total =
       subtotal + tax;
 
+const submitBtn =
+  document.getElementById("submitBtn");
+
+const minimumWarning =
+  document.getElementById("minimumOrderWarning");
+
+if (total < 550) {
+  minimumWarning.style.display = "block";
+  submitBtn.disabled = true;
+  submitBtn.classList.add("submit-disabled");
+} else {
+  minimumWarning.style.display = "none";
+  submitBtn.disabled = false;
+  submitBtn.classList.remove("submit-disabled");
+}
     document.getElementById("planSubtotal").textContent =
       money(planSubtotal);
 
@@ -1785,6 +1819,24 @@ At 4U Sake Hibachi, we believe the best meals aren't just eaten, they’re exper
       }
 
       calculateTotal();
+
+calculateTotal();
+
+const currentTotal =
+  Number(
+    document
+      .getElementById("grandTotal")
+      .textContent
+      .replace(/[$,]/g, "")
+  );
+
+if (currentTotal < 550) {
+  alert("Minimum order is $550.");
+  return;
+}
+
+
+
 
       if (!proteinsValid()) {
         alert(
