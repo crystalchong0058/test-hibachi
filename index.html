@@ -1868,11 +1868,9 @@ if (currentTotal < 550) {
           buildBookingParams()
         );
 
-        alert(
-          "Booking request submitted! Check your email for confirmation and deposit instructions."
-        );
-        e.target.reset();
-        calculateTotal();
+        window.location.href =
+  "success.html";
+  
       } catch (err) {
         console.error(err);
         alert(
